@@ -1,0 +1,537 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		EF6720061E66FCC900FF8D71 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF6720051E66FCC900FF8D71 /* AppDelegate.swift */; };
+		EF6720081E66FCC900FF8D71 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF6720071E66FCC900FF8D71 /* ViewController.swift */; };
+		EF67200B1E66FCC900FF8D71 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EF6720091E66FCC900FF8D71 /* Main.storyboard */; };
+		EF67200D1E66FCC900FF8D71 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EF67200C1E66FCC900FF8D71 /* Assets.xcassets */; };
+		EF6720101E66FCC900FF8D71 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EF67200E1E66FCC900FF8D71 /* LaunchScreen.storyboard */; };
+		EF67201B1E66FCC900FF8D71 /* SoolyWeatherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF67201A1E66FCC900FF8D71 /* SoolyWeatherTests.swift */; };
+		EF6720261E66FCC900FF8D71 /* SoolyWeatherUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF6720251E66FCC900FF8D71 /* SoolyWeatherUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		EF6720171E66FCC900FF8D71 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EF671FFA1E66FCC900FF8D71 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EF6720011E66FCC900FF8D71;
+			remoteInfo = SoolyWeather;
+		};
+		EF6720221E66FCC900FF8D71 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EF671FFA1E66FCC900FF8D71 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EF6720011E66FCC900FF8D71;
+			remoteInfo = SoolyWeather;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		EF6720021E66FCC900FF8D71 /* SoolyWeather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SoolyWeather.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		EF6720051E66FCC900FF8D71 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		EF6720071E66FCC900FF8D71 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		EF67200A1E66FCC900FF8D71 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		EF67200C1E66FCC900FF8D71 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		EF67200F1E66FCC900FF8D71 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		EF6720111E66FCC900FF8D71 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EF6720161E66FCC900FF8D71 /* SoolyWeatherTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SoolyWeatherTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		EF67201A1E66FCC900FF8D71 /* SoolyWeatherTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoolyWeatherTests.swift; sourceTree = "<group>"; };
+		EF67201C1E66FCC900FF8D71 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EF6720211E66FCC900FF8D71 /* SoolyWeatherUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SoolyWeatherUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		EF6720251E66FCC900FF8D71 /* SoolyWeatherUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoolyWeatherUITests.swift; sourceTree = "<group>"; };
+		EF6720271E66FCC900FF8D71 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		EF671FFF1E66FCC900FF8D71 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EF6720131E66FCC900FF8D71 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EF67201E1E66FCC900FF8D71 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		EF671FF91E66FCC900FF8D71 = {
+			isa = PBXGroup;
+			children = (
+				EF6720041E66FCC900FF8D71 /* SoolyWeather */,
+				EF6720191E66FCC900FF8D71 /* SoolyWeatherTests */,
+				EF6720241E66FCC900FF8D71 /* SoolyWeatherUITests */,
+				EF6720031E66FCC900FF8D71 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		EF6720031E66FCC900FF8D71 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				EF6720021E66FCC900FF8D71 /* SoolyWeather.app */,
+				EF6720161E66FCC900FF8D71 /* SoolyWeatherTests.xctest */,
+				EF6720211E66FCC900FF8D71 /* SoolyWeatherUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		EF6720041E66FCC900FF8D71 /* SoolyWeather */ = {
+			isa = PBXGroup;
+			children = (
+				EF6720051E66FCC900FF8D71 /* AppDelegate.swift */,
+				EF6720071E66FCC900FF8D71 /* ViewController.swift */,
+				EF6720091E66FCC900FF8D71 /* Main.storyboard */,
+				EF67200C1E66FCC900FF8D71 /* Assets.xcassets */,
+				EF67200E1E66FCC900FF8D71 /* LaunchScreen.storyboard */,
+				EF6720111E66FCC900FF8D71 /* Info.plist */,
+			);
+			path = SoolyWeather;
+			sourceTree = "<group>";
+		};
+		EF6720191E66FCC900FF8D71 /* SoolyWeatherTests */ = {
+			isa = PBXGroup;
+			children = (
+				EF67201A1E66FCC900FF8D71 /* SoolyWeatherTests.swift */,
+				EF67201C1E66FCC900FF8D71 /* Info.plist */,
+			);
+			path = SoolyWeatherTests;
+			sourceTree = "<group>";
+		};
+		EF6720241E66FCC900FF8D71 /* SoolyWeatherUITests */ = {
+			isa = PBXGroup;
+			children = (
+				EF6720251E66FCC900FF8D71 /* SoolyWeatherUITests.swift */,
+				EF6720271E66FCC900FF8D71 /* Info.plist */,
+			);
+			path = SoolyWeatherUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		EF6720011E66FCC900FF8D71 /* SoolyWeather */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EF67202A1E66FCC900FF8D71 /* Build configuration list for PBXNativeTarget "SoolyWeather" */;
+			buildPhases = (
+				EF671FFE1E66FCC900FF8D71 /* Sources */,
+				EF671FFF1E66FCC900FF8D71 /* Frameworks */,
+				EF6720001E66FCC900FF8D71 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SoolyWeather;
+			productName = SoolyWeather;
+			productReference = EF6720021E66FCC900FF8D71 /* SoolyWeather.app */;
+			productType = "com.apple.product-type.application";
+		};
+		EF6720151E66FCC900FF8D71 /* SoolyWeatherTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EF67202D1E66FCC900FF8D71 /* Build configuration list for PBXNativeTarget "SoolyWeatherTests" */;
+			buildPhases = (
+				EF6720121E66FCC900FF8D71 /* Sources */,
+				EF6720131E66FCC900FF8D71 /* Frameworks */,
+				EF6720141E66FCC900FF8D71 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				EF6720181E66FCC900FF8D71 /* PBXTargetDependency */,
+			);
+			name = SoolyWeatherTests;
+			productName = SoolyWeatherTests;
+			productReference = EF6720161E66FCC900FF8D71 /* SoolyWeatherTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		EF6720201E66FCC900FF8D71 /* SoolyWeatherUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EF6720301E66FCC900FF8D71 /* Build configuration list for PBXNativeTarget "SoolyWeatherUITests" */;
+			buildPhases = (
+				EF67201D1E66FCC900FF8D71 /* Sources */,
+				EF67201E1E66FCC900FF8D71 /* Frameworks */,
+				EF67201F1E66FCC900FF8D71 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				EF6720231E66FCC900FF8D71 /* PBXTargetDependency */,
+			);
+			name = SoolyWeatherUITests;
+			productName = SoolyWeatherUITests;
+			productReference = EF6720211E66FCC900FF8D71 /* SoolyWeatherUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		EF671FFA1E66FCC900FF8D71 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0810;
+				LastUpgradeCheck = 0810;
+				ORGANIZATIONNAME = SoolyChristina;
+				TargetAttributes = {
+					EF6720011E66FCC900FF8D71 = {
+						CreatedOnToolsVersion = 8.1;
+						DevelopmentTeam = 7523YW79F8;
+						ProvisioningStyle = Automatic;
+					};
+					EF6720151E66FCC900FF8D71 = {
+						CreatedOnToolsVersion = 8.1;
+						DevelopmentTeam = 7523YW79F8;
+						ProvisioningStyle = Automatic;
+						TestTargetID = EF6720011E66FCC900FF8D71;
+					};
+					EF6720201E66FCC900FF8D71 = {
+						CreatedOnToolsVersion = 8.1;
+						DevelopmentTeam = 7523YW79F8;
+						ProvisioningStyle = Automatic;
+						TestTargetID = EF6720011E66FCC900FF8D71;
+					};
+				};
+			};
+			buildConfigurationList = EF671FFD1E66FCC900FF8D71 /* Build configuration list for PBXProject "SoolyWeather" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = EF671FF91E66FCC900FF8D71;
+			productRefGroup = EF6720031E66FCC900FF8D71 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				EF6720011E66FCC900FF8D71 /* SoolyWeather */,
+				EF6720151E66FCC900FF8D71 /* SoolyWeatherTests */,
+				EF6720201E66FCC900FF8D71 /* SoolyWeatherUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		EF6720001E66FCC900FF8D71 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EF6720101E66FCC900FF8D71 /* LaunchScreen.storyboard in Resources */,
+				EF67200D1E66FCC900FF8D71 /* Assets.xcassets in Resources */,
+				EF67200B1E66FCC900FF8D71 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EF6720141E66FCC900FF8D71 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EF67201F1E66FCC900FF8D71 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		EF671FFE1E66FCC900FF8D71 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EF6720081E66FCC900FF8D71 /* ViewController.swift in Sources */,
+				EF6720061E66FCC900FF8D71 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EF6720121E66FCC900FF8D71 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EF67201B1E66FCC900FF8D71 /* SoolyWeatherTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EF67201D1E66FCC900FF8D71 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EF6720261E66FCC900FF8D71 /* SoolyWeatherUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		EF6720181E66FCC900FF8D71 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EF6720011E66FCC900FF8D71 /* SoolyWeather */;
+			targetProxy = EF6720171E66FCC900FF8D71 /* PBXContainerItemProxy */;
+		};
+		EF6720231E66FCC900FF8D71 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EF6720011E66FCC900FF8D71 /* SoolyWeather */;
+			targetProxy = EF6720221E66FCC900FF8D71 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		EF6720091E66FCC900FF8D71 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EF67200A1E66FCC900FF8D71 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		EF67200E1E66FCC900FF8D71 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EF67200F1E66FCC900FF8D71 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		EF6720281E66FCC900FF8D71 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		EF6720291E66FCC900FF8D71 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		EF67202B1E66FCC900FF8D71 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 7523YW79F8;
+				INFOPLIST_FILE = SoolyWeather/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = sooly.SoolyWeather;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		EF67202C1E66FCC900FF8D71 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 7523YW79F8;
+				INFOPLIST_FILE = SoolyWeather/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = sooly.SoolyWeather;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		EF67202E1E66FCC900FF8D71 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = 7523YW79F8;
+				INFOPLIST_FILE = SoolyWeatherTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = sooly.SoolyWeatherTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SoolyWeather.app/SoolyWeather";
+			};
+			name = Debug;
+		};
+		EF67202F1E66FCC900FF8D71 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = 7523YW79F8;
+				INFOPLIST_FILE = SoolyWeatherTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = sooly.SoolyWeatherTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SoolyWeather.app/SoolyWeather";
+			};
+			name = Release;
+		};
+		EF6720311E66FCC900FF8D71 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				DEVELOPMENT_TEAM = 7523YW79F8;
+				INFOPLIST_FILE = SoolyWeatherUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = sooly.SoolyWeatherUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = SoolyWeather;
+			};
+			name = Debug;
+		};
+		EF6720321E66FCC900FF8D71 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				DEVELOPMENT_TEAM = 7523YW79F8;
+				INFOPLIST_FILE = SoolyWeatherUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = sooly.SoolyWeatherUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = SoolyWeather;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		EF671FFD1E66FCC900FF8D71 /* Build configuration list for PBXProject "SoolyWeather" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EF6720281E66FCC900FF8D71 /* Debug */,
+				EF6720291E66FCC900FF8D71 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EF67202A1E66FCC900FF8D71 /* Build configuration list for PBXNativeTarget "SoolyWeather" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EF67202B1E66FCC900FF8D71 /* Debug */,
+				EF67202C1E66FCC900FF8D71 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		EF67202D1E66FCC900FF8D71 /* Build configuration list for PBXNativeTarget "SoolyWeatherTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EF67202E1E66FCC900FF8D71 /* Debug */,
+				EF67202F1E66FCC900FF8D71 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		EF6720301E66FCC900FF8D71 /* Build configuration list for PBXNativeTarget "SoolyWeatherUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EF6720311E66FCC900FF8D71 /* Debug */,
+				EF6720321E66FCC900FF8D71 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = EF671FFA1E66FCC900FF8D71 /* Project object */;
+}
