@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8843519F6FEB1E572DAB960C /* Pods_SoolyWeather.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41E1DB84854540886F501FCA /* Pods_SoolyWeather.framework */; };
 		EF6720061E66FCC900FF8D71 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF6720051E66FCC900FF8D71 /* AppDelegate.swift */; };
 		EF6720081E66FCC900FF8D71 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF6720071E66FCC900FF8D71 /* ViewController.swift */; };
 		EF67200B1E66FCC900FF8D71 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EF6720091E66FCC900FF8D71 /* Main.storyboard */; };
@@ -14,6 +15,14 @@
 		EF6720101E66FCC900FF8D71 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EF67200E1E66FCC900FF8D71 /* LaunchScreen.storyboard */; };
 		EF67201B1E66FCC900FF8D71 /* SoolyWeatherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF67201A1E66FCC900FF8D71 /* SoolyWeatherTests.swift */; };
 		EF6720261E66FCC900FF8D71 /* SoolyWeatherUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF6720251E66FCC900FF8D71 /* SoolyWeatherUITests.swift */; };
+		EF6720341E66FD5D00FF8D71 /* WeatherModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF6720331E66FD5C00FF8D71 /* WeatherModel.swift */; };
+		EF6720B71E6709D800FF8D71 /* NSObject+YYModel.m in Sources */ = {isa = PBXBuildFile; fileRef = EF6720B31E6709D700FF8D71 /* NSObject+YYModel.m */; };
+		EF6720B81E6709D800FF8D71 /* YYClassInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = EF6720B51E6709D800FF8D71 /* YYClassInfo.m */; };
+		EF9F4A191E67CCB10095C800 /* Info-iOS.plist in Resources */ = {isa = PBXBuildFile; fileRef = EF9F4A131E67CCB10095C800 /* Info-iOS.plist */; };
+		EF9F4A1A1E67CCB10095C800 /* Info-OSX.plist in Resources */ = {isa = PBXBuildFile; fileRef = EF9F4A141E67CCB10095C800 /* Info-OSX.plist */; };
+		EF9F4A1B1E67CCB10095C800 /* Info-tvOS.plist in Resources */ = {isa = PBXBuildFile; fileRef = EF9F4A151E67CCB10095C800 /* Info-tvOS.plist */; };
+		EF9F4A1C1E67CCB10095C800 /* Info-watchOS.plist in Resources */ = {isa = PBXBuildFile; fileRef = EF9F4A161E67CCB10095C800 /* Info-watchOS.plist */; };
+		EF9F4A1D1E67CCB10095C800 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF9F4A181E67CCB10095C800 /* SwiftyJSON.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +43,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		402CDB3A3528BB82BD36C6B7 /* Pods-SoolyWeather.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SoolyWeather.release.xcconfig"; path = "Pods/Target Support Files/Pods-SoolyWeather/Pods-SoolyWeather.release.xcconfig"; sourceTree = "<group>"; };
+		41E1DB84854540886F501FCA /* Pods_SoolyWeather.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SoolyWeather.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF6720021E66FCC900FF8D71 /* SoolyWeather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SoolyWeather.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF6720051E66FCC900FF8D71 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EF6720071E66FCC900FF8D71 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -47,6 +58,20 @@
 		EF6720211E66FCC900FF8D71 /* SoolyWeatherUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SoolyWeatherUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF6720251E66FCC900FF8D71 /* SoolyWeatherUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoolyWeatherUITests.swift; sourceTree = "<group>"; };
 		EF6720271E66FCC900FF8D71 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EF6720331E66FD5C00FF8D71 /* WeatherModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherModel.swift; sourceTree = "<group>"; };
+		EF6720B21E6709D700FF8D71 /* NSObject+YYModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+YYModel.h"; sourceTree = "<group>"; };
+		EF6720B31E6709D700FF8D71 /* NSObject+YYModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+YYModel.m"; sourceTree = "<group>"; };
+		EF6720B41E6709D800FF8D71 /* YYClassInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYClassInfo.h; sourceTree = "<group>"; };
+		EF6720B51E6709D800FF8D71 /* YYClassInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYClassInfo.m; sourceTree = "<group>"; };
+		EF6720B61E6709D800FF8D71 /* YYModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYModel.h; sourceTree = "<group>"; };
+		EF6720C51E670B2400FF8D71 /* brige.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = brige.h; sourceTree = "<group>"; };
+		EF9F4A131E67CCB10095C800 /* Info-iOS.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Info-iOS.plist"; sourceTree = "<group>"; };
+		EF9F4A141E67CCB10095C800 /* Info-OSX.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Info-OSX.plist"; sourceTree = "<group>"; };
+		EF9F4A151E67CCB10095C800 /* Info-tvOS.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Info-tvOS.plist"; sourceTree = "<group>"; };
+		EF9F4A161E67CCB10095C800 /* Info-watchOS.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Info-watchOS.plist"; sourceTree = "<group>"; };
+		EF9F4A171E67CCB10095C800 /* SwiftyJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwiftyJSON.h; sourceTree = "<group>"; };
+		EF9F4A181E67CCB10095C800 /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
+		F09DC736A1F344DFEC4D28A5 /* Pods-SoolyWeather.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SoolyWeather.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SoolyWeather/Pods-SoolyWeather.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +79,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8843519F6FEB1E572DAB960C /* Pods_SoolyWeather.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -74,6 +100,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3209A92E2646D16C2E950681 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F09DC736A1F344DFEC4D28A5 /* Pods-SoolyWeather.debug.xcconfig */,
+				402CDB3A3528BB82BD36C6B7 /* Pods-SoolyWeather.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		84D347E169C7B7F23F6E55F4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				41E1DB84854540886F501FCA /* Pods_SoolyWeather.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		EF671FF91E66FCC900FF8D71 = {
 			isa = PBXGroup;
 			children = (
@@ -81,6 +124,8 @@
 				EF6720191E66FCC900FF8D71 /* SoolyWeatherTests */,
 				EF6720241E66FCC900FF8D71 /* SoolyWeatherUITests */,
 				EF6720031E66FCC900FF8D71 /* Products */,
+				3209A92E2646D16C2E950681 /* Pods */,
+				84D347E169C7B7F23F6E55F4 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -97,12 +142,16 @@
 		EF6720041E66FCC900FF8D71 /* SoolyWeather */ = {
 			isa = PBXGroup;
 			children = (
+				EF9F4A121E67CCB10095C800 /* SwityJSON */,
+				EF6720B11E6709D700FF8D71 /* YYModel */,
 				EF6720051E66FCC900FF8D71 /* AppDelegate.swift */,
 				EF6720071E66FCC900FF8D71 /* ViewController.swift */,
 				EF6720091E66FCC900FF8D71 /* Main.storyboard */,
 				EF67200C1E66FCC900FF8D71 /* Assets.xcassets */,
 				EF67200E1E66FCC900FF8D71 /* LaunchScreen.storyboard */,
+				EF6720331E66FD5C00FF8D71 /* WeatherModel.swift */,
 				EF6720111E66FCC900FF8D71 /* Info.plist */,
+				EF6720C51E670B2400FF8D71 /* brige.h */,
 			);
 			path = SoolyWeather;
 			sourceTree = "<group>";
@@ -125,6 +174,31 @@
 			path = SoolyWeatherUITests;
 			sourceTree = "<group>";
 		};
+		EF6720B11E6709D700FF8D71 /* YYModel */ = {
+			isa = PBXGroup;
+			children = (
+				EF6720B21E6709D700FF8D71 /* NSObject+YYModel.h */,
+				EF6720B31E6709D700FF8D71 /* NSObject+YYModel.m */,
+				EF6720B41E6709D800FF8D71 /* YYClassInfo.h */,
+				EF6720B51E6709D800FF8D71 /* YYClassInfo.m */,
+				EF6720B61E6709D800FF8D71 /* YYModel.h */,
+			);
+			path = YYModel;
+			sourceTree = "<group>";
+		};
+		EF9F4A121E67CCB10095C800 /* SwityJSON */ = {
+			isa = PBXGroup;
+			children = (
+				EF9F4A131E67CCB10095C800 /* Info-iOS.plist */,
+				EF9F4A141E67CCB10095C800 /* Info-OSX.plist */,
+				EF9F4A151E67CCB10095C800 /* Info-tvOS.plist */,
+				EF9F4A161E67CCB10095C800 /* Info-watchOS.plist */,
+				EF9F4A171E67CCB10095C800 /* SwiftyJSON.h */,
+				EF9F4A181E67CCB10095C800 /* SwiftyJSON.swift */,
+			);
+			path = SwityJSON;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -132,9 +206,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = EF67202A1E66FCC900FF8D71 /* Build configuration list for PBXNativeTarget "SoolyWeather" */;
 			buildPhases = (
+				3500826683536829FB7E2626 /* [CP] Check Pods Manifest.lock */,
 				EF671FFE1E66FCC900FF8D71 /* Sources */,
 				EF671FFF1E66FCC900FF8D71 /* Frameworks */,
 				EF6720001E66FCC900FF8D71 /* Resources */,
+				732500B186F5887F3910B1C6 /* [CP] Embed Pods Frameworks */,
+				8DEBF725F944621C7D8B60B0 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -235,9 +312,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EF9F4A1B1E67CCB10095C800 /* Info-tvOS.plist in Resources */,
+				EF9F4A191E67CCB10095C800 /* Info-iOS.plist in Resources */,
 				EF6720101E66FCC900FF8D71 /* LaunchScreen.storyboard in Resources */,
 				EF67200D1E66FCC900FF8D71 /* Assets.xcassets in Resources */,
 				EF67200B1E66FCC900FF8D71 /* Main.storyboard in Resources */,
+				EF9F4A1C1E67CCB10095C800 /* Info-watchOS.plist in Resources */,
+				EF9F4A1A1E67CCB10095C800 /* Info-OSX.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -257,13 +338,65 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		3500826683536829FB7E2626 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		732500B186F5887F3910B1C6 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SoolyWeather/Pods-SoolyWeather-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8DEBF725F944621C7D8B60B0 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SoolyWeather/Pods-SoolyWeather-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		EF671FFE1E66FCC900FF8D71 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				EF6720081E66FCC900FF8D71 /* ViewController.swift in Sources */,
+				EF6720341E66FD5D00FF8D71 /* WeatherModel.swift in Sources */,
 				EF6720061E66FCC900FF8D71 /* AppDelegate.swift in Sources */,
+				EF9F4A1D1E67CCB10095C800 /* SwiftyJSON.swift in Sources */,
+				EF6720B81E6709D800FF8D71 /* YYClassInfo.m in Sources */,
+				EF6720B71E6709D800FF8D71 /* NSObject+YYModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -413,6 +546,7 @@
 		};
 		EF67202B1E66FCC900FF8D71 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F09DC736A1F344DFEC4D28A5 /* Pods-SoolyWeather.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 7523YW79F8;
@@ -420,12 +554,14 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = sooly.SoolyWeather;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = SoolyWeather/brige.h;
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
 		EF67202C1E66FCC900FF8D71 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 402CDB3A3528BB82BD36C6B7 /* Pods-SoolyWeather.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 7523YW79F8;
@@ -433,6 +569,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = sooly.SoolyWeather;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = SoolyWeather/brige.h;
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
@@ -514,6 +651,7 @@
 				EF67202C1E66FCC900FF8D71 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		EF67202D1E66FCC900FF8D71 /* Build configuration list for PBXNativeTarget "SoolyWeatherTests" */ = {
 			isa = XCConfigurationList;
@@ -522,6 +660,7 @@
 				EF67202F1E66FCC900FF8D71 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		EF6720301E66FCC900FF8D71 /* Build configuration list for PBXNativeTarget "SoolyWeatherUITests" */ = {
 			isa = XCConfigurationList;
@@ -530,6 +669,7 @@
 				EF6720321E66FCC900FF8D71 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

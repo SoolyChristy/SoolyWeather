@@ -5,6 +5,22 @@
    <BuildAction
       parallelizeBuildables = "YES"
       buildImplicitDependencies = "YES">
+      <BuildActionEntries>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "EF6720011E66FCC900FF8D71"
+               BuildableName = "SoolyWeather.app"
+               BlueprintName = "SoolyWeather"
+               ReferencedContainer = "container:SoolyWeather.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+      </BuildActionEntries>
    </BuildAction>
    <TestAction
       buildConfiguration = "Debug"
@@ -12,7 +28,36 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "EF6720151E66FCC900FF8D71"
+               BuildableName = "SoolyWeatherTests.xctest"
+               BlueprintName = "SoolyWeatherTests"
+               ReferencedContainer = "container:SoolyWeather.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "EF6720201E66FCC900FF8D71"
+               BuildableName = "SoolyWeatherUITests.xctest"
+               BlueprintName = "SoolyWeatherUITests"
+               ReferencedContainer = "container:SoolyWeather.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "EF6720011E66FCC900FF8D71"
+            BuildableName = "SoolyWeather.app"
+            BlueprintName = "SoolyWeather"
+            ReferencedContainer = "container:SoolyWeather.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </TestAction>
@@ -26,6 +71,16 @@
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
       allowLocationSimulation = "YES">
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "EF6720011E66FCC900FF8D71"
+            BuildableName = "SoolyWeather.app"
+            BlueprintName = "SoolyWeather"
+            ReferencedContainer = "container:SoolyWeather.xcodeproj">
+         </BuildableReference>
+      </BuildableProductRunnable>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>
@@ -35,6 +90,16 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "EF6720011E66FCC900FF8D71"
+            BuildableName = "SoolyWeather.app"
+            BlueprintName = "SoolyWeather"
+            ReferencedContainer = "container:SoolyWeather.xcodeproj">
+         </BuildableReference>
+      </BuildableProductRunnable>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">
