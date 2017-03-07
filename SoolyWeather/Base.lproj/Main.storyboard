@@ -9,10 +9,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Navigation Controller-->
+        <!--Main View Controller-->
         <scene sceneID="CnC-GI-G6x">
             <objects>
-                <navigationController id="OcQ-Dg-c5P" sceneMemberID="viewController">
+                <navigationController id="OcQ-Dg-c5P" customClass="MainViewController" customModule="SoolyWeather" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="j2M-uj-gIF">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -23,7 +23,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8kb-3i-wBv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-460" y="127"/>
+            <point key="canvasLocation" x="-694" y="128"/>
         </scene>
         <!--Home View Controller-->
         <scene sceneID="wju-Kp-jcY">
@@ -38,11 +38,46 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="Jxg-Ox-kt6"/>
+                    <navigationItem key="navigationItem" id="Jxg-Ox-kt6">
+                        <barButtonItem key="rightBarButtonItem" title="Item" id="qln-eN-FMj">
+                            <connections>
+                                <segue destination="S27-vo-QPg" kind="push" id="cSY-ik-lmp"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eMy-CG-kOy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="430" y="128"/>
+            <point key="canvasLocation" x="220" y="127"/>
+        </scene>
+        <!--Table View Controller-->
+        <scene sceneID="ZGe-1Q-Ba4">
+            <objects>
+                <tableViewController id="S27-vo-QPg" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="DT3-RO-4IM">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="HVF-As-ABr">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="HVF-As-ABr" id="a3H-Wx-93L">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="S27-vo-QPg" id="k4O-8w-fs5"/>
+                            <outlet property="delegate" destination="S27-vo-QPg" id="Mkq-M3-Dzr"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="eNB-ql-hlS"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JoB-hZ-lma" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1068" y="97"/>
         </scene>
     </scenes>
 </document>

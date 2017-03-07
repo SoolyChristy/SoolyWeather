@@ -19,9 +19,11 @@ class HomeViewController: UIViewController {
         let layout = UICollectionViewFlowLayout()
         layout.minimumLineSpacing = 0
         layout.minimumInteritemSpacing = 0
-        layout.itemSize = ScreenBounds.size
+        layout.itemSize = CGSize(width: ScreenWidth, height: ScreenHeight - 64)
         layout.scrollDirection = .horizontal
-        let collectionView = UICollectionView(frame: ScreenBounds, collectionViewLayout: layout)
+        let collectionViewFrame = CGRect(x: 0, y: 0, width: ScreenWidth, height: ScreenHeight)
+        let collectionView = UICollectionView(frame: collectionViewFrame, collectionViewLayout: layout)
+        collectionView.bounces = false
         collectionView.isPagingEnabled = true
         collectionView.dataSource = self
         collectionView.delegate = self
@@ -38,7 +40,6 @@ class HomeViewController: UIViewController {
         /// 注册cell
         collectionView.register(UINib(nibName: "SWCollectionViewCell", bundle: Bundle.main), forCellWithReuseIdentifier: reuseID)
     }
-    
 }
 
 // MARK: UICollectionView 代理方法、数据源方法

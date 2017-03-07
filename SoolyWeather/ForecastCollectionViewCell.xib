@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="ForecastCollectionViewCell" customModule="SoolyWeather" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="122" height="133"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="122" height="133"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sun" translatesAutoresizingMaskIntoConstraints="NO" id="Be4-4d-ga7">
+                        <rect key="frame" x="42" y="47.5" width="38" height="38"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="38" id="4Ay-nm-NR1"/>
+                            <constraint firstAttribute="width" constant="38" id="fdm-TG-Dpr"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gmh-4Q-W6X">
+                        <rect key="frame" x="40" y="15" width="42" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ga0-Bi-SLy">
+                        <rect key="frame" x="40" y="97" width="42" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstItem="gmh-4Q-W6X" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="1ZI-S2-kVK"/>
+                <constraint firstItem="Be4-4d-ga7" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="FB9-DD-ikO"/>
+                <constraint firstAttribute="bottom" secondItem="ga0-Bi-SLy" secondAttribute="bottom" constant="15" id="HUW-4r-jGa"/>
+                <constraint firstItem="gmh-4Q-W6X" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="15" id="SOM-QC-UR2"/>
+                <constraint firstItem="Be4-4d-ga7" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="dqY-fa-fG5"/>
+                <constraint firstItem="ga0-Bi-SLy" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="xHp-r9-EtT"/>
+            </constraints>
+            <size key="customSize" width="122" height="133"/>
+            <point key="canvasLocation" x="93" y="55.5"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="sun" width="80" height="80"/>
+    </resources>
+</document>
