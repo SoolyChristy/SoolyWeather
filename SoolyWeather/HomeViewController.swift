@@ -21,7 +21,7 @@ class HomeViewController: UIViewController {
         layout.minimumInteritemSpacing = 0
         layout.itemSize = CGSize(width: ScreenWidth, height: ScreenHeight - 64)
         layout.scrollDirection = .horizontal
-        let collectionViewFrame = CGRect(x: 0, y: 0, width: ScreenWidth, height: ScreenHeight)
+        let collectionViewFrame = CGRect(x: 0, y: 0, width: ScreenWidth, height: ScreenHeight - 64)
         let collectionView = UICollectionView(frame: collectionViewFrame, collectionViewLayout: layout)
         collectionView.bounces = false
         collectionView.isPagingEnabled = true
@@ -36,6 +36,11 @@ class HomeViewController: UIViewController {
     }
     
     private func setupUI() {
+        self.title = "SoolyWeather"
+        self.navigationController?.navigationBar.titleTextAttributes = {[
+            NSForegroundColorAttributeName: UIColor.white,
+            NSFontAttributeName: UIFont(name: "AdobeClean-Light", size: 18.0)!
+            ]}()
         self.view.addSubview(self.collectionView)
         /// 注册cell
         collectionView.register(UINib(nibName: "SWCollectionViewCell", bundle: Bundle.main), forCellWithReuseIdentifier: reuseID)

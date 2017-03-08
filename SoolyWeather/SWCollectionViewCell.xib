@@ -43,18 +43,18 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="21" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qME-nt-zEs">
-                        <rect key="frame" x="30" y="151" width="185" height="180"/>
-                        <fontDescription key="fontDescription" name="AdobeClean-Light" family="Adobe Clean" pointSize="180"/>
+                        <rect key="frame" x="30" y="151" width="205.5" height="200"/>
+                        <fontDescription key="fontDescription" name="AdobeClean-Light" family="Adobe Clean" pointSize="200"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="℃" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="My9-bK-rVQ">
-                        <rect key="frame" x="217" y="151" width="19" height="21"/>
+                        <rect key="frame" x="237.5" y="151" width="19" height="21"/>
                         <fontDescription key="fontDescription" type="system" weight="thin" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceHorizontal="YES" pagingEnabled="YES" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="XQh-L1-nC5">
+                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceHorizontal="YES" showsHorizontalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="XQh-L1-nC5">
                         <rect key="frame" x="0.0" y="437" width="343" height="150"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>

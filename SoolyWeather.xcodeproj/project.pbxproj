@@ -13,6 +13,7 @@
 		709162F11E6E8F89008A913C /* AdobeClean-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 709162F01E6E8F1D008A913C /* AdobeClean-Light.otf */; };
 		709162FD1E6E9BC9008A913C /* ForecastCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 709162FB1E6E9BC9008A913C /* ForecastCollectionViewCell.swift */; };
 		709162FE1E6E9BC9008A913C /* ForecastCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 709162FC1E6E9BC9008A913C /* ForecastCollectionViewCell.xib */; };
+		70DC04FE1E6FEFF9008A894B /* UIButton+SoolyWeather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70DC04FD1E6FEFF9008A894B /* UIButton+SoolyWeather.swift */; };
 		70F1CDEA1E6EFD1E009216B4 /* UIColor+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70F1CDE91E6EFD1E009216B4 /* UIColor+Hex.swift */; };
 		70F1CDED1E6EFDC1009216B4 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70F1CDEC1E6EFDC1009216B4 /* MainViewController.swift */; };
 		8843519F6FEB1E572DAB960C /* Pods_SoolyWeather.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41E1DB84854540886F501FCA /* Pods_SoolyWeather.framework */; settings = {ATTRIBUTES = (Required, ); }; };
@@ -58,6 +59,7 @@
 		709162F01E6E8F1D008A913C /* AdobeClean-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AdobeClean-Light.otf"; sourceTree = "<group>"; };
 		709162FB1E6E9BC9008A913C /* ForecastCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForecastCollectionViewCell.swift; sourceTree = "<group>"; };
 		709162FC1E6E9BC9008A913C /* ForecastCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ForecastCollectionViewCell.xib; sourceTree = "<group>"; };
+		70DC04FD1E6FEFF9008A894B /* UIButton+SoolyWeather.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton+SoolyWeather.swift"; sourceTree = "<group>"; };
 		70F1CDE91E6EFD1E009216B4 /* UIColor+Hex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Hex.swift"; sourceTree = "<group>"; };
 		70F1CDEC1E6EFDC1009216B4 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		EF6720021E66FCC900FF8D71 /* SoolyWeather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SoolyWeather.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -162,6 +164,7 @@
 			children = (
 				EF9F4A121E67CCB10095C800 /* SwityJSON */,
 				70F1CDE91E6EFD1E009216B4 /* UIColor+Hex.swift */,
+				70DC04FD1E6FEFF9008A894B /* UIButton+SoolyWeather.swift */,
 			);
 			name = "第三方/拓展";
 			sourceTree = "<group>";
@@ -465,6 +468,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7073982D1E6C35B500167C49 /* HomeViewController.swift in Sources */,
+				70DC04FE1E6FEFF9008A894B /* UIButton+SoolyWeather.swift in Sources */,
 				70F1CDEA1E6EFD1E009216B4 /* UIColor+Hex.swift in Sources */,
 				EF6720341E66FD5D00FF8D71 /* WeatherModel.swift in Sources */,
 				707398301E6C381F00167C49 /* SWCollectionViewCell.swift in Sources */,
