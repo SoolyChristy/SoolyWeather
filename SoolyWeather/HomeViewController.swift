@@ -8,13 +8,12 @@
 
 import UIKit
 
-public let ScreenWidth: CGFloat = UIScreen.main.bounds.size.width
-public let ScreenHeight: CGFloat = UIScreen.main.bounds.size.height
-public let ScreenBounds: CGRect = UIScreen.main.bounds
-private let reuseID = "cell"
+private let reuseID = "SWCollectionViewCell"
 
 class HomeViewController: UIViewController {
 
+    var weatherData: Weather?
+    
     lazy var collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.minimumLineSpacing = 0
@@ -30,9 +29,11 @@ class HomeViewController: UIViewController {
         return collectionView
     }()
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
+        
     }
     
     private func setupUI() {
@@ -41,9 +42,35 @@ class HomeViewController: UIViewController {
             NSForegroundColorAttributeName: UIColor.white,
             NSFontAttributeName: UIFont(name: "AdobeClean-Light", size: 18.0)!
             ]}()
+        /// 创建左边item
+        let leftBtn = UIButton(type: .custom)
+        leftBtn.setTitle("城市", for: .normal)
+        leftBtn.sizeToFit()
+        leftBtn.addTarget(self, action: #selector(leftBtnClick), for: .touchUpInside)
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(customView: leftBtn)
         self.view.addSubview(self.collectionView)
         /// 注册cell
         collectionView.register(UINib(nibName: "SWCollectionViewCell", bundle: Bundle.main), forCellWithReuseIdentifier: reuseID)
+        /// 接收通知
+        NotificationCenter.default.addObserver(self, selector: #selector(updataUI(notification:)), name: WeatherDataNotificationName, object: nil)
+    }
+    
+    @objc private func leftBtnClick() {
+        self.navigationController?.pushViewController(CitySelectorViewController(), animated: true)
+    }
+    
+    // MARK: 收到数据后 更新UI
+    @objc private func updataUI(notification: Notification) {
+        weatherData = notification.userInfo?["data"] as? Weather
+        /// 更新数据
+        DispatchQueue.main.async {
+            self.collectionView.reloadData()
+        }
+    }
+    
+    // MARK: 移除通知
+    deinit {
+        NotificationCenter.default.removeObserver(self)
     }
 }
 
@@ -59,7 +86,7 @@ extension HomeViewController: UICollectionViewDelegate,UICollectionViewDataSourc
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseID, for: indexPath) as? SWCollectionViewCell
-        
+        cell?.weatherData = self.weatherData
         return cell!
     }
 }

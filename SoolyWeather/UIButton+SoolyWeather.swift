@@ -8,10 +8,14 @@
 
 import UIKit
 
-let btnAttributes = [NSFontAttributeName: UIFont.systemFont(ofSize: 17),NSForegroundColorAttributeName: mainColor]
-
 extension UIButton {
-    // MARK: 便利构造函数快速创建btn
+    
+    /// 便利构造器快速创建btn
+    ///
+    /// - Parameters:
+    ///   - imageName: btn图标
+    ///   - title: 指标名
+    ///   - color: 指标字符颜色
     convenience init(imageName: String, title: String = "无数据", color: UIColor = mainColor) {
         self.init()
         
@@ -22,8 +26,5 @@ extension UIButton {
         setImage(UIImage(named: imageName), for: UIControlState.normal)
 
     }
-    
-    func setBtnTitle(title: String) {
-        
-    }
+
 }

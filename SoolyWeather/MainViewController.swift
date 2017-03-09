@@ -8,8 +8,6 @@
 
 import UIKit
 
-let mainColor = UIColor.color(hex: "#707070")
-
 class MainViewController: UINavigationController {
 
     override func viewDidLoad() {

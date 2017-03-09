@@ -8,7 +8,7 @@
 
 import UIKit
 
-private let reuseID = "forecastCell"
+private let reuseID = "ForecastCollectionViewCell"
 class SWCollectionViewCell: UICollectionViewCell {
 
     @IBOutlet weak var forecastCollectionView: UICollectionView!
@@ -27,6 +27,14 @@ class SWCollectionViewCell: UICollectionViewCell {
     lazy var windSpeed: UIButton = UIButton(imageName: "nice")
     /// 湿度btn
     lazy var humidity: UIButton = UIButton(imageName: "nice")
+    /// 数据
+    var weatherData: Weather? {
+        didSet {
+            cityLabel.text = weatherData?.city ?? "无数据"
+            weatherLabel.text = weatherData?.weather ?? "无数据"
+            tempLabel.text = weatherData?.temp ?? "无数据"
+        }
+    }
     
     override func awakeFromNib() {
         super.awakeFromNib()

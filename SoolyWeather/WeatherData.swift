@@ -13,11 +13,17 @@ class GetWeatherData {
     
     var weatherData: Weather = Weather()
     
-    func getWeatherData() {
+    /// 创建单例
+    static let shared = GetWeatherData()
+    
+    class func weatherData(cityName: String) {
+        self.shared.getWeatherData(cityName: cityName)
+    }
+    
+    private func getWeatherData(cityName: String) {
         let appCode = "647138002fd44f8abcaefe88afcfb71f"
         let host = "http://jisutianqi.market.alicloudapi.com"
         let path = "/weather/query"
-        let cityName = "武汉"
         let querys = "?city=\(cityName)"
         let urlStr = host + path + querys
         /// 带中文的URL创建 必须将编码方式改为utf8 否则 URL为空
@@ -40,6 +46,9 @@ class GetWeatherData {
             /// 利用HandyJSON 字典转模型
             self.weatherData = JSONDeserializer<Weather>.deserializeFrom(dict: dict)!
             print(self.weatherData)
+            
+            /// 数据请求完毕后 发送通知 并传递数据
+            NotificationCenter.default.post(name: WeatherDataNotificationName, object: nil, userInfo: ["data": self.weatherData])
             
         }).resume()
     }
