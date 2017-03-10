@@ -10,6 +10,8 @@ import UIKit
 
 private let nomalCell = "nomalCell"
 private let hotCityCell = "hotCityCell"
+private let recentCell = "rencentCityCell"
+private let currentCell = "currentCityCell"
 
 class CitySelectorViewController: UIViewController {
 
@@ -23,7 +25,7 @@ class CitySelectorViewController: UIViewController {
     /// 懒加载 热门城市
     lazy var hotCities: [String] = {
         let path = Bundle.main.path(forResource: "hotCities.plist", ofType: nil)
-        let array = NSArray(contentsOfFile: path!) as? [String]
+        let array = NSArray(contentsOfFile: path ?? "") as? [String]
         return array ?? []
     }()
     /// 懒加载 标题数组
@@ -47,10 +49,21 @@ class CitySelectorViewController: UIViewController {
     }
 
     private func setupUI() {
+        self.title = "选择城市"
+        self.navigationController?.navigationBar.titleTextAttributes = {[
+            NSForegroundColorAttributeName: UIColor.white,
+            NSFontAttributeName: UIFont.systemFont(ofSize: 18)
+            ]}()
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: nomalCell)
+        tableView.register(RecentCitiesTableViewCell.self, forCellReuseIdentifier: recentCell)
+        tableView.register(CurrentCityTableViewCell.self, forCellReuseIdentifier: currentCell)
         tableView.register(HotCityTableViewCell.self, forCellReuseIdentifier: hotCityCell)
+        // 右边索引
+        tableView.sectionIndexColor = mainColor
+//        tableView.sectionIndexTrackingBackgroundColor = UIColor.white
+        tableView.sectionIndexBackgroundColor = UIColor.clear
         self.view.addSubview(tableView)
 
     }
@@ -75,18 +88,33 @@ extension CitySelectorViewController: UITableViewDataSource, UITableViewDelegate
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         if indexPath.section == 0 {
-            let cell = tableView.dequeueReusableCell(withIdentifier: nomalCell, for: indexPath)
+            
+            let cell = tableView.dequeueReusableCell(withIdentifier: currentCell, for: indexPath)
+            cell.backgroundColor = cellColor
             return cell
             
         }else if indexPath.section == 1 {
-            let cell = tableView.dequeueReusableCell(withIdentifier: nomalCell, for: indexPath)
+            
+            let cell = tableView.dequeueReusableCell(withIdentifier: recentCell, for: indexPath)
+            cell.backgroundColor = cellColor
             return cell
         }else if indexPath.section == 2 {
+            
             let cell = tableView.dequeueReusableCell(withIdentifier: hotCityCell, for: indexPath) as? HotCityTableViewCell
+            
+            /// 当点击热门城市按钮时调用此闭包
+            cell?.callBack = { [weak self] (btn) in
+                /// 请求数据
+                GetWeatherData.weatherData(cityName: btn.titleLabel?.text ?? "")
+                let vc = HomeViewController()
+                vc.navigationItem.hidesBackButton = true
+                self?.navigationController?.pushViewController(vc, animated: true)
+            }
             return cell!
             
         }else {
             let cell = tableView.dequeueReusableCell(withIdentifier: nomalCell, for: indexPath)
+//            cell.backgroundColor = cellColor
             let key = titleArray[indexPath.section]
             cell.textLabel?.text = cityDic[key]![indexPath.row]
             return cell
@@ -113,8 +141,29 @@ extension CitySelectorViewController: UITableViewDataSource, UITableViewDelegate
         return titleArray
     }
     
-    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return titleArray[section]
+    // MARK: section头视图
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let view = UIView(frame: CGRect(x: 0, y: 0, width: ScreenWidth, height: sectionMargin))
+        let title = UILabel(frame: CGRect(x: 15, y: 5, width: ScreenWidth - 15, height: 28))
+        var titleArr = titleArray
+        titleArr[0] = "当前城市"
+        titleArr[1] = "最近选择城市"
+        titleArr[2] = "热门城市"
+        title.text = titleArr[section]
+        title.textColor = mainColor
+        title.font = UIFont.boldSystemFont(ofSize: 18)
+        view.addSubview(title)
+        view.backgroundColor = UIColor.white
+        if section > 2 {
+            view.backgroundColor = mainColor
+            title.textColor = UIColor.white
+        }
+        
+        return view
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return sectionMargin
     }
     
     // MARK: row高度

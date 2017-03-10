@@ -16,6 +16,8 @@ class HotCityTableViewCell: UITableViewCell {
         let array = NSArray(contentsOfFile: path!) as? [String]
         return array ?? []
     }()
+    /// 点击按钮执行该闭包 (可选)
+    var callBack: ((_ btn: UIButton) -> ())?
     
     /// 使用tableView.dequeueReusableCell会自动调用这个方法
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
@@ -28,6 +30,7 @@ class HotCityTableViewCell: UITableViewCell {
     }
     
     private func setupUI() {
+        self.backgroundColor = cellColor
         for i in 0..<hotCities.count {
             // 列
             let column = i % 3
@@ -37,13 +40,12 @@ class HotCityTableViewCell: UITableViewCell {
             let btn = UIButton(frame: CGRect(x: btnMargin + CGFloat(column) * (btnWidth + btnMargin), y: 15 + CGFloat(row) * (btnHeight + btnMargin), width: btnWidth, height: btnHeight))
             btn.setTitle(hotCities[i], for: .normal)
             btn.setTitleColor(mainColor, for: .normal)
-            btn.tintColor = mainColor
             btn.titleLabel?.font = UIFont.systemFont(ofSize: 16)
             btn.backgroundColor = UIColor.white
-            btn.layer.borderColor = mainColor.cgColor
-            btn.layer.borderWidth = 1
+//            btn.layer.borderColor = mainColor.cgColor
+//            btn.layer.borderWidth = 0.5
             btn.layer.cornerRadius = 1
-            btn.alpha = 0.8
+            btn.setBackgroundImage(btnHighlightImage, for: .highlighted)
             btn .addTarget(self, action: #selector(btnClick(btn:)), for: .touchUpInside)
             self.addSubview(btn)
             
@@ -51,6 +53,8 @@ class HotCityTableViewCell: UITableViewCell {
     }
     
     @objc private func btnClick(btn: UIButton) {
+        // 执行闭包
+        callBack!(btn)
         
     }
 

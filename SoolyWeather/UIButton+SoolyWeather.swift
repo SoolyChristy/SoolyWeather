@@ -16,15 +16,19 @@ extension UIButton {
     ///   - imageName: btn图标
     ///   - title: 指标名
     ///   - color: 指标字符颜色
-    convenience init(imageName: String, title: String = "无数据", color: UIColor = mainColor) {
+    convenience init(imageName: String, title: String = "无数据") {
         self.init()
         
         let att = NSAttributedString(string: title, attributes: btnAttributes)
-        setTitle(title, for: .normal)
         setAttributedTitle(att, for: .normal)
-        setTitleColor(color, for: .normal)
         setImage(UIImage(named: imageName), for: UIControlState.normal)
+        imageView?.contentMode = .scaleAspectFit
 
     }
 
+    /// 更新指标btn的数据
+    func btnSetData(data: String) {
+        let att = NSAttributedString(string: data, attributes: btnAttributes)
+        setAttributedTitle(att, for: .normal)
+    }
 }

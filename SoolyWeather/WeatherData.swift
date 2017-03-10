@@ -44,8 +44,8 @@ class GetWeatherData {
             let json = JSON.init(data: data!)
             let dict = json["result"].dictionaryObject as? NSDictionary
             /// 利用HandyJSON 字典转模型
-            self.weatherData = JSONDeserializer<Weather>.deserializeFrom(dict: dict)!
-            print(self.weatherData)
+            self.weatherData = JSONDeserializer<Weather>.deserializeFrom(dict: dict) ?? Weather()
+            print("天气数据请求完毕,请求城市 " + (self.weatherData.city ?? "nil"))
             
             /// 数据请求完毕后 发送通知 并传递数据
             NotificationCenter.default.post(name: WeatherDataNotificationName, object: nil, userInfo: ["data": self.weatherData])

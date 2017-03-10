@@ -15,9 +15,18 @@ let ScreenBounds: CGRect = UIScreen.main.bounds
 
 /// 主配色
 let mainColor = UIColor.color(hex: "#707070")
+/// cell背景色
+let cellColor = UIColor.color(hex: "#EAEAEA")
+/// btn 高亮背景色
+let btnHighlightColor = UIColor.color(hex: "#efeff4")
+/// btn 高亮图片
+let btnHighlightImage = UIColor.creatImageWithColor(color: btnHighlightColor)
 
 /// 主页指标btn Attributes
 let btnAttributes = [NSFontAttributeName: UIFont.systemFont(ofSize: 17),NSForegroundColorAttributeName: mainColor]
+
+/// section间距
+let sectionMargin: CGFloat = 38
 
 /// 热门城市btn
 let btnMargin: CGFloat = 15

@@ -8,8 +8,9 @@
 
 import UIKit
 
-// MARK:- 把#ffffff颜色转为UIColor
+
 extension UIColor {
+    // MARK:- 把#ffffff颜色转为UIColor
     class func color(hex:String) ->UIColor {
         
         var cString = hex.trimmingCharacters(in:CharacterSet.whitespacesAndNewlines).uppercased()
@@ -37,5 +38,17 @@ extension UIColor {
         Scanner(string: bString).scanHexInt32(&b)
         
         return UIColor(red: CGFloat(r) / 255.0, green: CGFloat(g) / 255.0, blue: CGFloat(b) / 255.0, alpha: CGFloat(1))
+    }
+    
+    // MARK:- 把#ffffff颜色转为UIImage
+    class func creatImageWithColor(color: UIColor) -> UIImage {
+        let rect = CGRect(x: 0.0, y: 0.0, width: 1.0, height: 1.0)
+        UIGraphicsBeginImageContext(rect.size)
+        let context = UIGraphicsGetCurrentContext()
+        context!.setFillColor(color.cgColor)
+        context!.fill(rect)
+        let image = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        return image!
     }
 }

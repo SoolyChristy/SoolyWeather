@@ -18,7 +18,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="122" height="133"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sun" translatesAutoresizingMaskIntoConstraints="NO" id="Be4-4d-ga7">
+                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Be4-4d-ga7">
                         <rect key="frame" x="42" y="47.5" width="38" height="38"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="38" id="4Ay-nm-NR1"/>
@@ -48,10 +48,12 @@
                 <constraint firstItem="ga0-Bi-SLy" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="xHp-r9-EtT"/>
             </constraints>
             <size key="customSize" width="122" height="133"/>
+            <connections>
+                <outlet property="iconView" destination="Be4-4d-ga7" id="LBy-51-IV1"/>
+                <outlet property="tempLabel" destination="ga0-Bi-SLy" id="fVy-wY-1eD"/>
+                <outlet property="weekLabel" destination="gmh-4Q-W6X" id="mSn-Sh-cfv"/>
+            </connections>
             <point key="canvasLocation" x="93" y="55.5"/>
         </collectionViewCell>
     </objects>
-    <resources>
-        <image name="sun" width="80" height="80"/>
-    </resources>
 </document>
