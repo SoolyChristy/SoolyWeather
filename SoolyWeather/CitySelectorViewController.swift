@@ -67,6 +67,10 @@ class CitySelectorViewController: UIViewController {
         self.view.addSubview(tableView)
 
     }
+    
+    deinit {
+        print("我走了")
+    }
 
 }
 
@@ -106,9 +110,7 @@ extension CitySelectorViewController: UITableViewDataSource, UITableViewDelegate
             cell?.callBack = { [weak self] (btn) in
                 /// 请求数据
                 GetWeatherData.weatherData(cityName: btn.titleLabel?.text ?? "")
-                let vc = HomeViewController()
-                vc.navigationItem.hidesBackButton = true
-                self?.navigationController?.pushViewController(vc, animated: true)
+                self?.navigationController?.pushViewController(HomeViewController(), animated: true)
             }
             return cell!
             
@@ -123,14 +125,13 @@ extension CitySelectorViewController: UITableViewDataSource, UITableViewDelegate
     }
     // MARK: 点击cell
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: false)
         let cell = tableView.cellForRow(at: indexPath)
         print("点击了 \(cell?.textLabel?.text ?? "")")
         if indexPath.section > 2 {
             /// 请求数据
             GetWeatherData.weatherData(cityName: cell?.textLabel?.text ?? "")
-            let vc = HomeViewController()
-            vc.navigationItem.hidesBackButton = true
-            self.navigationController?.pushViewController(vc, animated: true)
+            self.navigationController?.pushViewController(HomeViewController(), animated: true)
         }else {
             return
         }

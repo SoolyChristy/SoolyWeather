@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0820"
+   LastUpgradeVersion = "0700"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "3B3A02AC406A6E22C6CCC28864E790CC"
+               BlueprintIdentifier = "6AEA96CF13A18D02555A6761B331BA2C"
                BuildableName = "Pods_SoolyWeather.framework"
                BlueprintName = "Pods-SoolyWeather"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -45,7 +45,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "3B3A02AC406A6E22C6CCC28864E790CC"
+            BlueprintIdentifier = "6AEA96CF13A18D02555A6761B331BA2C"
             BuildableName = "Pods_SoolyWeather.framework"
             BlueprintName = "Pods-SoolyWeather"
             ReferencedContainer = "container:Pods.xcodeproj">
@@ -60,15 +60,6 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "3B3A02AC406A6E22C6CCC28864E790CC"
-            BuildableName = "Pods_SoolyWeather.framework"
-            BlueprintName = "Pods-SoolyWeather"
-            ReferencedContainer = "container:Pods.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">

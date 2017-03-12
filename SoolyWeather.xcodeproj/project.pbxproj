@@ -21,6 +21,7 @@
 		709162FE1E6E9BC9008A913C /* ForecastCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 709162FC1E6E9BC9008A913C /* ForecastCollectionViewCell.xib */; };
 		70DC04FE1E6FEFF9008A894B /* UIButton+SoolyWeather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70DC04FD1E6FEFF9008A894B /* UIButton+SoolyWeather.swift */; };
 		70DC05001E704C6A008A894B /* header.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70DC04FF1E704C6A008A894B /* header.swift */; };
+		70E507B31E751A2400A6BCC3 /* SnapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70E507B21E751A2400A6BCC3 /* SnapKit.framework */; };
 		70F1CDEA1E6EFD1E009216B4 /* UIColor+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70F1CDE91E6EFD1E009216B4 /* UIColor+Hex.swift */; };
 		70F1CDED1E6EFDC1009216B4 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70F1CDEC1E6EFDC1009216B4 /* MainViewController.swift */; };
 		8843519F6FEB1E572DAB960C /* Pods_SoolyWeather.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41E1DB84854540886F501FCA /* Pods_SoolyWeather.framework */; settings = {ATTRIBUTES = (Required, ); }; };
@@ -74,6 +75,7 @@
 		709162FC1E6E9BC9008A913C /* ForecastCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ForecastCollectionViewCell.xib; sourceTree = "<group>"; };
 		70DC04FD1E6FEFF9008A894B /* UIButton+SoolyWeather.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton+SoolyWeather.swift"; sourceTree = "<group>"; };
 		70DC04FF1E704C6A008A894B /* header.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = header.swift; sourceTree = "<group>"; };
+		70E507B21E751A2400A6BCC3 /* SnapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SnapKit.framework; path = "../../Library/Developer/Xcode/DerivedData/SoolyWeather-hicwjgxroopszbgjsmsqbpzcanvm/Build/Products/Debug-iphonesimulator/SnapKit/SnapKit.framework"; sourceTree = "<group>"; };
 		70F1CDE91E6EFD1E009216B4 /* UIColor+Hex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Hex.swift"; sourceTree = "<group>"; };
 		70F1CDEC1E6EFDC1009216B4 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		EF6720021E66FCC900FF8D71 /* SoolyWeather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SoolyWeather.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -105,6 +107,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				70E507B31E751A2400A6BCC3 /* SnapKit.framework in Frameworks */,
 				EFC0CB871E684A8E008BFC40 /* HandyJSON.framework in Frameworks */,
 				8843519F6FEB1E572DAB960C /* Pods_SoolyWeather.framework in Frameworks */,
 			);
@@ -252,6 +255,7 @@
 		84D347E169C7B7F23F6E55F4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				70E507B21E751A2400A6BCC3 /* SnapKit.framework */,
 				EFC0CB861E684A8E008BFC40 /* HandyJSON.framework */,
 				41E1DB84854540886F501FCA /* Pods_SoolyWeather.framework */,
 			);

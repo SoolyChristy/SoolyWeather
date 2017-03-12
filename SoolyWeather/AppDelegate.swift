@@ -27,6 +27,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationDidEnterBackground(_ application: UIApplication) {
         // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
         // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
+        
+        /// 存储数据数组(数据持久化)
+        if dataArray?.count != 0 {
+            NSKeyedArchiver.archiveRootObject(dataArray!, toFile: dataArrPath)
+            print("存储数据成功！- 路径：" + dataArrPath)
+        }
     }
 
     func applicationWillEnterForeground(_ application: UIApplication) {

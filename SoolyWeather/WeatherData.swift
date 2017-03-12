@@ -44,12 +44,36 @@ class GetWeatherData {
             let json = JSON.init(data: data!)
             let dict = json["result"].dictionaryObject as? NSDictionary
             /// 利用HandyJSON 字典转模型
-            self.weatherData = JSONDeserializer<Weather>.deserializeFrom(dict: dict) ?? Weather()
+            self.weatherData = Weather.deserialize(from: dict) ?? Weather()
+//            self.weatherData = JSONDeserializer<Weather>.deserializeFrom(dict: dict) ?? Weather()
             print("天气数据请求完毕,请求城市 " + (self.weatherData.city ?? "nil"))
             
-            /// 数据请求完毕后 发送通知 并传递数据
-            NotificationCenter.default.post(name: WeatherDataNotificationName, object: nil, userInfo: ["data": self.weatherData])
+            /// 全局数据数组增加数据
+            self.dataArrayaddData(data: self.weatherData)
+            /// 数据请求完毕后 发送通知
+            NotificationCenter.default.post(name: WeatherDataNotificationName, object: nil, userInfo: nil)
             
         }).resume()
+    }
+    
+    // MARK: 全局数据数组增加数据
+    private func dataArrayaddData(data: Weather) {
+        // 判断数组里是否存在同名城市数据，若存在则 删除旧数据 -> 插入新数据 (最多4组数据)
+        let count = dataArray?.count
+        if count != 0 {
+            for i in 0..<count! {
+                if data.city == dataArray?[i].city {
+                    dataArray?.remove(at: i)
+                    dataArray?.insert(data, at: 0)
+                    return
+                }
+            }
+            if count == 4 {
+                dataArray?.remove(at: 3)
+                dataArray?.insert(data, at: 0)
+                return
+            }
+        }
+        dataArray?.insert(data, at: 0)
     }
 }

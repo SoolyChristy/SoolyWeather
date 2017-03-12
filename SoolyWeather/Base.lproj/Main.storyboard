@@ -13,7 +13,7 @@
         <scene sceneID="CnC-GI-G6x">
             <objects>
                 <navigationController id="OcQ-Dg-c5P" customClass="MainViewController" customModule="SoolyWeather" customModuleProvider="target" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="j2M-uj-gIF">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="j2M-uj-gIF">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>

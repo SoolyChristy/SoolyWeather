@@ -7,12 +7,20 @@
 //
 
 import UIKit
+import SnapKit
 
 private let reuseID = "SWCollectionViewCell"
 
 class HomeViewController: UIViewController {
-
-    var weatherData: Weather?
+    
+    lazy var page: UIPageControl = {
+        let page = UIPageControl()
+        page.numberOfPages = (dataArray?.count)!
+        page.pageIndicatorTintColor = cellColor
+        page.currentPageIndicatorTintColor = mainColor
+        page.currentPage = 0
+        return page
+    }()
     
     lazy var collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
@@ -29,11 +37,17 @@ class HomeViewController: UIViewController {
         return collectionView
     }()
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
+        /// 接收通知
+        NotificationCenter.default.addObserver(self, selector: #selector(updateUI), name: WeatherDataNotificationName, object: nil)
+
         setupUI()
-        
+    }
+    
+    // MARK: 移除通知
+    override func viewWillDisappear(_ animated: Bool) {
+        NotificationCenter.default.removeObserver(self)
     }
     
     private func setupUI() {
@@ -51,8 +65,17 @@ class HomeViewController: UIViewController {
         self.view.addSubview(self.collectionView)
         /// 注册cell
         collectionView.register(UINib(nibName: "SWCollectionViewCell", bundle: Bundle.main), forCellWithReuseIdentifier: reuseID)
-        /// 接收通知
-        NotificationCenter.default.addObserver(self, selector: #selector(updataUI(notification:)), name: WeatherDataNotificationName, object: nil)
+        
+        /// 添加pageControl
+        view.addSubview(page)
+            // 利用SnapKit增加约束
+        page.snp.makeConstraints({ make in
+            make.top.equalTo(0)
+            make.centerX.equalTo(self.view)
+            make.width.equalTo(100)
+            make.height.equalTo(30)
+        })
+        
     }
     
     @objc private func leftBtnClick() {
@@ -60,18 +83,18 @@ class HomeViewController: UIViewController {
     }
     
     // MARK: 收到数据后 更新UI
-    @objc private func updataUI(notification: Notification) {
-        weatherData = notification.userInfo?["data"] as? Weather
+    @objc private func updateUI() {
         /// 更新数据
         DispatchQueue.main.async {
+            // 设置分页控制器的 总数(当只有一页时不显示)
+            if (dataArray?.count)! > 1 {
+                self.page.numberOfPages = (dataArray?.count)!
+            }
             self.collectionView.reloadData()
         }
     }
     
-    // MARK: 移除通知
-    deinit {
-        NotificationCenter.default.removeObserver(self)
-    }
+
 }
 
 // MARK: UICollectionView 代理方法、数据源方法
@@ -81,12 +104,28 @@ extension HomeViewController: UICollectionViewDelegate,UICollectionViewDataSourc
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
+        if dataArray?.count == 0 {
+            return 1
+        }else {
+            return dataArray!.count
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseID, for: indexPath) as? SWCollectionViewCell
-        cell?.weatherData = self.weatherData
+//        cell?.weatherData = self.weatherData
+        cell?.weatherData = Weather()
+        if dataArray?.count != 0 {
+            cell?.weatherData = dataArray?[indexPath.row] ?? Weather()
+        }
         return cell!
+    }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        if page.isHidden == false {
+            let pageNum = (Int(scrollView.contentOffset.x + scrollView.frame.width * 0.5) / Int(ScreenWidth)) % (dataArray?.count)!
+            page.currentPage = pageNum
+        }
+        
     }
 }
