@@ -8,6 +8,11 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="AdobeClean-Light.otf">
+            <string>AdobeClean-Light</string>
+        </array>
+    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -73,6 +78,15 @@
                         <color key="textColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="发布" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ntg-oi-OHw">
+                        <rect key="frame" x="155" y="316" width="34" height="25"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="25" id="wQ9-i2-MGa"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="AdobeClean-Light" family="Adobe Clean" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
             </view>
             <constraints>
@@ -81,6 +95,7 @@
                 <constraint firstItem="Htl-cf-9qK" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="65" id="76t-hS-aqd"/>
                 <constraint firstItem="L2n-4S-tMS" firstAttribute="top" secondItem="qME-nt-zEs" secondAttribute="top" id="7ik-lI-hHr"/>
                 <constraint firstAttribute="bottom" secondItem="XQh-L1-nC5" secondAttribute="bottom" id="Ij5-Lh-DX6"/>
+                <constraint firstItem="Ntg-oi-OHw" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="Onc-gp-fYb"/>
                 <constraint firstItem="Dy7-rg-R9z" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="20" id="QVz-fm-Pso"/>
                 <constraint firstItem="iOI-J1-xqC" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="Rbd-rv-NgF"/>
                 <constraint firstItem="qME-nt-zEs" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="Rff-Ra-thG"/>
@@ -91,6 +106,7 @@
                 <constraint firstItem="Htl-cf-9qK" firstAttribute="leading" secondItem="iOI-J1-xqC" secondAttribute="leading" id="lUq-kY-km6"/>
                 <constraint firstItem="qME-nt-zEs" firstAttribute="top" secondItem="Dy7-rg-R9z" secondAttribute="bottom" constant="45" id="pRF-b9-SNy"/>
                 <constraint firstItem="Dy7-rg-R9z" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="30" id="psj-Zw-O3B"/>
+                <constraint firstItem="Ntg-oi-OHw" firstAttribute="top" secondItem="qME-nt-zEs" secondAttribute="bottom" constant="5" id="v4F-Jg-myZ"/>
                 <constraint firstItem="iOI-J1-xqC" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="30" id="zLv-uv-54T"/>
             </constraints>
             <size key="customSize" width="343" height="587"/>
@@ -100,6 +116,7 @@
                 <outlet property="iconView" destination="Dy7-rg-R9z" id="cUF-2q-QWU"/>
                 <outlet property="separatorView" destination="ZI2-Z5-pDI" id="fT4-7Q-uSr"/>
                 <outlet property="tempLabel" destination="qME-nt-zEs" id="LTJ-uL-xWv"/>
+                <outlet property="upadateTime" destination="Ntg-oi-OHw" id="6b5-0b-oAB"/>
                 <outlet property="weatherLabel" destination="Htl-cf-9qK" id="V97-QD-EKr"/>
             </connections>
             <point key="canvasLocation" x="-69.5" y="251.5"/>

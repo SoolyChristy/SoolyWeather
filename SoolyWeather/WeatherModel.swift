@@ -129,6 +129,20 @@ class Weather: NSObject,HandyJSON,NSCoding {
         }
     }
     
+    func pm2_5Icon(index: String) -> UIImage {
+        print(index)
+        switch index {
+        case "优":
+            return UIImage(named: "nice")!
+        case "良":
+            return UIImage(named: "ok")!
+        case "无数据":
+            return UIImage(named: "nice")!
+        default:
+            return UIImage(named: "bad")!
+        }
+    }
+    
 }
 
 class Aqi: NSObject,HandyJSON,NSCoding {

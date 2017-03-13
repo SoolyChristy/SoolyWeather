@@ -41,6 +41,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationDidBecomeActive(_ application: UIApplication) {
         // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+        
+        /// 若有缓存数据 则更新数据
+        if dataArray?.count != 0 {
+            GetWeatherData.weatherData(cityName: (dataArray?[0].city)!)
+        }
     }
 
     func applicationWillTerminate(_ application: UIApplication) {

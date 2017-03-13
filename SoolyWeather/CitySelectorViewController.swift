@@ -99,9 +99,13 @@ extension CitySelectorViewController: UITableViewDataSource, UITableViewDelegate
             
         }else if indexPath.section == 1 {
             
-            let cell = tableView.dequeueReusableCell(withIdentifier: recentCell, for: indexPath)
-            cell.backgroundColor = cellColor
-            return cell
+            let cell = tableView.dequeueReusableCell(withIdentifier: recentCell, for: indexPath) as? RecentCitiesTableViewCell
+            cell?.callBack = { [weak self] (btn) in
+                /// 请求数据
+                GetWeatherData.weatherData(cityName: btn.titleLabel?.text ?? "")
+                self?.navigationController?.pushViewController(HomeViewController(), animated: true)
+            }
+            return cell!
         }else if indexPath.section == 2 {
             
             let cell = tableView.dequeueReusableCell(withIdentifier: hotCityCell, for: indexPath) as? HotCityTableViewCell
@@ -113,7 +117,6 @@ extension CitySelectorViewController: UITableViewDataSource, UITableViewDelegate
                 self?.navigationController?.pushViewController(HomeViewController(), animated: true)
             }
             return cell!
-            
         }else {
             let cell = tableView.dequeueReusableCell(withIdentifier: nomalCell, for: indexPath)
 //            cell.backgroundColor = cellColor
@@ -170,9 +173,9 @@ extension CitySelectorViewController: UITableViewDataSource, UITableViewDelegate
     // MARK: row高度
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if indexPath.section == 0 {
-            return 42
+            return btnHeight + 2 * btnMargin
         }else if indexPath.section == 1 {
-            return 42
+            return btnHeight + 2 * btnMargin
         }else if indexPath.section == 2 {
             let row = (hotCities.count - 1) / 3
             return (btnHeight + 2 * btnMargin) + (btnMargin + btnHeight) * CGFloat(row)

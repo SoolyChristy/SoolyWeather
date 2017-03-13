@@ -25,6 +25,8 @@ class SWCollectionViewCell: UICollectionViewCell {
     lazy var pm2_5: UIButton = UIButton(imageName: "nice")
     /// 风速btn
     lazy var windSpeed: UIButton = UIButton(imageName: "windspeed")
+    /// 更新时间
+    @IBOutlet weak var upadateTime: UILabel!
     /// 湿度btn
     lazy var humidity: UIButton = UIButton(imageName: "shidu")
     /// 分割线
@@ -36,8 +38,10 @@ class SWCollectionViewCell: UICollectionViewCell {
             cityLabel.text = weatherData?.city ?? "无数据"
             weatherLabel.text = weatherData?.weather ?? "无数据"
             tempLabel.text = weatherData?.temp ?? "无数据"
+            upadateTime.text = (weatherData?.updatetime ?? "无数据") + " 发布"
             pm2_5.btnSetData(data: weatherData?.aqi?.quality ?? "无数据")
-            windSpeed.btnSetData(data: weatherData?.windspeed ?? "无数据")
+            pm2_5.setImage(weatherData?.pm2_5Icon(index: weatherData?.aqi?.quality ?? "无数据"), for: .normal)
+            windSpeed.btnSetData(data: weatherData?.windpower ?? "无数据")
             humidity.btnSetData(data: weatherData?.humidity ?? "无数据")
             iconView.image = Weather.weatherIcon(weather: weatherData?.weather ?? "", isBigPic: true)
             
@@ -71,6 +75,7 @@ class SWCollectionViewCell: UICollectionViewCell {
         cityLabel.textColor = mainColor
         tempLabel.textColor = mainColor
         weatherLabel.textColor = mainColor
+        upadateTime.textColor = mainColor
     }
 
     // MARK: 创建三个指标btn

@@ -41,7 +41,6 @@ class HomeViewController: UIViewController {
         super.viewDidLoad()
         /// 接收通知
         NotificationCenter.default.addObserver(self, selector: #selector(updateUI), name: WeatherDataNotificationName, object: nil)
-
         setupUI()
     }
     
@@ -121,11 +120,24 @@ extension HomeViewController: UICollectionViewDelegate,UICollectionViewDataSourc
         return cell!
     }
     
+    // MARK: 滑动时更新数据
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        if page.isHidden == false {
+        // 更新page
             let pageNum = (Int(scrollView.contentOffset.x + scrollView.frame.width * 0.5) / Int(ScreenWidth)) % (dataArray?.count)!
             page.currentPage = pageNum
-        }
         
+        // 当滑动到下一个item时 更新该item的数据
+        let width = scrollView.frame.width
+        switch scrollView.contentOffset.x {
+        case width:
+            GetWeatherData.weatherData(cityName: (dataArray?[1].city)!, isUpdateData: true)
+        case width * 2:
+            GetWeatherData.weatherData(cityName: (dataArray?[2].city)!, isUpdateData: true)
+        case width * 3:
+            GetWeatherData.weatherData(cityName: (dataArray?[3].city)!, isUpdateData: true)
+        default:
+            return
+        }
     }
+    
 }
