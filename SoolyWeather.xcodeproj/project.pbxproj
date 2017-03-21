@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		700083341E810D23008969A9 /* MyCitiesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 700083321E810D23008969A9 /* MyCitiesTableViewCell.swift */; };
+		700083351E810D23008969A9 /* MyCitiesTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 700083331E810D23008969A9 /* MyCitiesTableViewCell.xib */; };
 		7065270D1E71194A00D620FD /* CitySelectorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7065270C1E71194A00D620FD /* CitySelectorViewController.swift */; };
 		7065270F1E711FDD00D620FD /* cities.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7065270E1E711FDD00D620FD /* cities.plist */; };
 		706527111E7133F100D620FD /* HotCityTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 706527101E7133F100D620FD /* HotCityTableViewCell.swift */; };
@@ -19,6 +21,10 @@
 		709162F11E6E8F89008A913C /* AdobeClean-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 709162F01E6E8F1D008A913C /* AdobeClean-Light.otf */; };
 		709162FD1E6E9BC9008A913C /* ForecastCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 709162FB1E6E9BC9008A913C /* ForecastCollectionViewCell.swift */; };
 		709162FE1E6E9BC9008A913C /* ForecastCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 709162FC1E6E9BC9008A913C /* ForecastCollectionViewCell.xib */; };
+		70B0A7F01E77CF49002A4214 /* String+Pinyin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B0A7EF1E77CF49002A4214 /* String+Pinyin.swift */; };
+		70B0A7F41E7826A1002A4214 /* SoolyCover.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B0A7F31E7826A1002A4214 /* SoolyCover.swift */; };
+		70C17F801E79341F00022897 /* DrawerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70C17F7F1E79341F00022897 /* DrawerViewController.swift */; };
+		70C17F831E79403B00022897 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70C17F821E79403B00022897 /* MenuViewController.swift */; };
 		70DC04FE1E6FEFF9008A894B /* UIButton+SoolyWeather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70DC04FD1E6FEFF9008A894B /* UIButton+SoolyWeather.swift */; };
 		70DC05001E704C6A008A894B /* header.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70DC04FF1E704C6A008A894B /* header.swift */; };
 		70E507B31E751A2400A6BCC3 /* SnapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70E507B21E751A2400A6BCC3 /* SnapKit.framework */; };
@@ -61,6 +67,8 @@
 /* Begin PBXFileReference section */
 		402CDB3A3528BB82BD36C6B7 /* Pods-SoolyWeather.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SoolyWeather.release.xcconfig"; path = "Pods/Target Support Files/Pods-SoolyWeather/Pods-SoolyWeather.release.xcconfig"; sourceTree = "<group>"; };
 		41E1DB84854540886F501FCA /* Pods_SoolyWeather.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SoolyWeather.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		700083321E810D23008969A9 /* MyCitiesTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyCitiesTableViewCell.swift; sourceTree = "<group>"; };
+		700083331E810D23008969A9 /* MyCitiesTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyCitiesTableViewCell.xib; sourceTree = "<group>"; };
 		7065270C1E71194A00D620FD /* CitySelectorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CitySelectorViewController.swift; sourceTree = "<group>"; };
 		7065270E1E711FDD00D620FD /* cities.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = cities.plist; sourceTree = "<group>"; };
 		706527101E7133F100D620FD /* HotCityTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HotCityTableViewCell.swift; sourceTree = "<group>"; };
@@ -73,6 +81,10 @@
 		709162F01E6E8F1D008A913C /* AdobeClean-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AdobeClean-Light.otf"; sourceTree = "<group>"; };
 		709162FB1E6E9BC9008A913C /* ForecastCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForecastCollectionViewCell.swift; sourceTree = "<group>"; };
 		709162FC1E6E9BC9008A913C /* ForecastCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ForecastCollectionViewCell.xib; sourceTree = "<group>"; };
+		70B0A7EF1E77CF49002A4214 /* String+Pinyin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Pinyin.swift"; sourceTree = "<group>"; };
+		70B0A7F31E7826A1002A4214 /* SoolyCover.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SoolyCover.swift; sourceTree = "<group>"; };
+		70C17F7F1E79341F00022897 /* DrawerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawerViewController.swift; sourceTree = "<group>"; };
+		70C17F821E79403B00022897 /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		70DC04FD1E6FEFF9008A894B /* UIButton+SoolyWeather.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton+SoolyWeather.swift"; sourceTree = "<group>"; };
 		70DC04FF1E704C6A008A894B /* header.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = header.swift; sourceTree = "<group>"; };
 		70E507B21E751A2400A6BCC3 /* SnapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SnapKit.framework; path = "../../Library/Developer/Xcode/DerivedData/SoolyWeather-hicwjgxroopszbgjsmsqbpzcanvm/Build/Products/Debug-iphonesimulator/SnapKit/SnapKit.framework"; sourceTree = "<group>"; };
@@ -142,7 +154,7 @@
 		709162F21E6E9845008A913C /* Home(主页) */ = {
 			isa = PBXGroup;
 			children = (
-				709162F51E6E9863008A913C /* Model */,
+				709162F51E6E9863008A913C /* Model/ViewModel */,
 				709162F41E6E985D008A913C /* View */,
 				709162F31E6E984F008A913C /* Controller */,
 			);
@@ -168,12 +180,12 @@
 			name = View;
 			sourceTree = "<group>";
 		};
-		709162F51E6E9863008A913C /* Model */ = {
+		709162F51E6E9863008A913C /* Model/ViewModel */ = {
 			isa = PBXGroup;
 			children = (
 				EF6720331E66FD5C00FF8D71 /* WeatherModel.swift */,
 			);
-			name = Model;
+			name = Model/ViewModel;
 			sourceTree = "<group>";
 		};
 		709162F71E6E98AD008A913C /* 第三方/拓展 */ = {
@@ -182,6 +194,7 @@
 				EF9F4A121E67CCB10095C800 /* SwityJSON */,
 				70F1CDE91E6EFD1E009216B4 /* UIColor+Hex.swift */,
 				70DC04FD1E6FEFF9008A894B /* UIButton+SoolyWeather.swift */,
+				70B0A7EF1E77CF49002A4214 /* String+Pinyin.swift */,
 			);
 			name = "第三方/拓展";
 			sourceTree = "<group>";
@@ -203,8 +216,19 @@
 			isa = PBXGroup;
 			children = (
 				EFC0CB881E685345008BFC40 /* WeatherData.swift */,
+				70B0A7F31E7826A1002A4214 /* SoolyCover.swift */,
 			);
 			name = "Tool(工具)";
+			sourceTree = "<group>";
+		};
+		70C17F811E79402100022897 /* Menu(菜单) */ = {
+			isa = PBXGroup;
+			children = (
+				70C17F821E79403B00022897 /* MenuViewController.swift */,
+				700083321E810D23008969A9 /* MyCitiesTableViewCell.swift */,
+				700083331E810D23008969A9 /* MyCitiesTableViewCell.xib */,
+			);
+			name = "Menu(菜单)";
 			sourceTree = "<group>";
 		};
 		70DC05011E704DFD008A894B /* CitySelector(城市选择) */ = {
@@ -248,6 +272,8 @@
 				EF6720091E66FCC900FF8D71 /* Main.storyboard */,
 				EF67200E1E66FCC900FF8D71 /* LaunchScreen.storyboard */,
 				70F1CDEC1E6EFDC1009216B4 /* MainViewController.swift */,
+				70C17F7F1E79341F00022897 /* DrawerViewController.swift */,
+				EF6720051E66FCC900FF8D71 /* AppDelegate.swift */,
 			);
 			name = Main;
 			sourceTree = "<group>";
@@ -288,9 +314,9 @@
 			isa = PBXGroup;
 			children = (
 				70F1CDEB1E6EFD84009216B4 /* Main */,
+				70C17F811E79402100022897 /* Menu(菜单) */,
 				709162F21E6E9845008A913C /* Home(主页) */,
 				70DC05011E704DFD008A894B /* CitySelector(城市选择) */,
-				EF6720051E66FCC900FF8D71 /* AppDelegate.swift */,
 				709162F81E6E98D9008A913C /* Resource */,
 				709162FA1E6E9A2F008A913C /* Tool(工具) */,
 				709162F71E6E98AD008A913C /* 第三方/拓展 */,
@@ -442,6 +468,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				700083351E810D23008969A9 /* MyCitiesTableViewCell.xib in Resources */,
 				709162F11E6E8F89008A913C /* AdobeClean-Light.otf in Resources */,
 				706527131E7136F900D620FD /* hotCities.plist in Resources */,
 				EF9F4A1B1E67CCB10095C800 /* Info-tvOS.plist in Resources */,
@@ -533,14 +560,19 @@
 				70F1CDEA1E6EFD1E009216B4 /* UIColor+Hex.swift in Sources */,
 				EF6720341E66FD5D00FF8D71 /* WeatherModel.swift in Sources */,
 				70DC05001E704C6A008A894B /* header.swift in Sources */,
+				70B0A7F01E77CF49002A4214 /* String+Pinyin.swift in Sources */,
 				707398301E6C381F00167C49 /* SWCollectionViewCell.swift in Sources */,
 				EFC0CB891E685345008BFC40 /* WeatherData.swift in Sources */,
 				709162FD1E6E9BC9008A913C /* ForecastCollectionViewCell.swift in Sources */,
 				70F1CDED1E6EFDC1009216B4 /* MainViewController.swift in Sources */,
 				7090B1F31E72E08B00C04D19 /* CurrentCityTableViewCell.swift in Sources */,
 				7090B1F11E72E05200C04D19 /* RecentCitiesableViewCell.swift in Sources */,
+				70C17F831E79403B00022897 /* MenuViewController.swift in Sources */,
+				70B0A7F41E7826A1002A4214 /* SoolyCover.swift in Sources */,
+				700083341E810D23008969A9 /* MyCitiesTableViewCell.swift in Sources */,
 				EF6720061E66FCC900FF8D71 /* AppDelegate.swift in Sources */,
 				EF9F4A1D1E67CCB10095C800 /* SwiftyJSON.swift in Sources */,
+				70C17F801E79341F00022897 /* DrawerViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

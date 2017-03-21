@@ -15,7 +15,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        
+        window = UIWindow(frame: ScreenBounds)
+        
+        window?.rootViewController = DrawerViewController(rootViewController: MainViewController(rootViewController: HomeViewController()), menuViewController: MenuViewController())
+        window?.makeKeyAndVisible()
+        
         return true
     }
 
@@ -43,9 +48,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
         
         /// 若有缓存数据 则更新数据
-        if dataArray?.count != 0 {
-            GetWeatherData.weatherData(cityName: (dataArray?[0].city)!)
+        guard let city = dataArray?[0].city else {
+            return
         }
+        GetWeatherData.weatherData(cityName: city)
     }
 
     func applicationWillTerminate(_ application: UIApplication) {

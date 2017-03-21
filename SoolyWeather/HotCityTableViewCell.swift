@@ -30,7 +30,9 @@ class HotCityTableViewCell: UITableViewCell {
     }
     
     private func setupUI() {
+        
         self.backgroundColor = cellColor
+        // 动态创建城市btn
         for i in 0..<hotCities.count {
             // 列
             let column = i % 3

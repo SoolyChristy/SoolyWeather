@@ -31,19 +31,19 @@
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="呼和浩特" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iOI-J1-xqC">
-                        <rect key="frame" x="131.5" y="30" width="80" height="28"/>
-                        <fontDescription key="fontDescription" name="PingFangSC-Semibold" family="PingFang SC" pointSize="20"/>
+                        <rect key="frame" x="132" y="30" width="80" height="28"/>
+                        <fontDescription key="fontDescription" name="PingFangSC-Medium" family="PingFang SC" pointSize="20"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="晴转多云" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Htl-cf-9qK">
-                        <rect key="frame" x="131.5" y="65" width="69.5" height="21"/>
+                        <rect key="frame" x="132" y="65" width="70" height="21"/>
                         <fontDescription key="fontDescription" type="system" weight="thin" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="21" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qME-nt-zEs">
-                        <rect key="frame" x="46.5" y="151" width="250" height="160"/>
+                        <rect key="frame" x="47" y="151" width="250" height="160"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="160" id="NSz-bH-NV2"/>
                             <constraint firstAttribute="width" constant="250" id="Se8-C2-S0S"/>
@@ -73,7 +73,7 @@
                         </constraints>
                     </view>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="℃" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L2n-4S-tMS">
-                        <rect key="frame" x="276.5" y="151" width="19.5" height="21"/>
+                        <rect key="frame" x="277" y="151" width="20" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>

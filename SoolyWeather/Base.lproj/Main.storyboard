@@ -13,7 +13,7 @@
         <scene sceneID="CnC-GI-G6x">
             <objects>
                 <navigationController id="OcQ-Dg-c5P" customClass="MainViewController" customModule="SoolyWeather" customModuleProvider="target" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="j2M-uj-gIF">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="j2M-uj-gIF">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -23,26 +23,28 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8kb-3i-wBv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-306" y="90"/>
+            <point key="canvasLocation" x="-318" y="90"/>
         </scene>
         <!--Home View Controller-->
         <scene sceneID="wju-Kp-jcY">
             <objects>
                 <viewController id="L1V-7U-ZF6" customClass="HomeViewController" customModule="SoolyWeather" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="fz0-ys-hhL"/>
-                        <viewControllerLayoutGuide type="bottom" id="zbC-KZ-V1R"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="g1f-d9-wjA">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
                     <navigationItem key="navigationItem" id="Jxg-Ox-kt6"/>
+                    <connections>
+                        <outlet property="searchDisplayController" destination="EcH-P1-bea" id="cLK-Tj-8ZX"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eMy-CG-kOy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <searchDisplayController id="EcH-P1-bea">
+                    <connections>
+                        <outlet property="delegate" destination="L1V-7U-ZF6" id="5CE-7g-jP6"/>
+                        <outlet property="searchContentsController" destination="L1V-7U-ZF6" id="QrC-f7-eB5"/>
+                        <outlet property="searchResultsDataSource" destination="L1V-7U-ZF6" id="4Ct-aK-P0i"/>
+                        <outlet property="searchResultsDelegate" destination="L1V-7U-ZF6" id="OoB-RV-fFU"/>
+                    </connections>
+                </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="450" y="90"/>
+            <point key="canvasLocation" x="594" y="90"/>
         </scene>
     </scenes>
 </document>

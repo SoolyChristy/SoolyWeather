@@ -15,7 +15,18 @@ private let currentCell = "currentCityCell"
 
 class CitySelectorViewController: UIViewController {
 
+    /// 表格
     lazy var tableView: UITableView = UITableView(frame: self.view.frame, style: .plain)
+    /// 搜索框
+    lazy var searchView: UIView = {
+       let view = UIView(frame: CGRect(x: 0, y: 0, width: ScreenWidth - 114, height: 44))
+        let serchBar = UISearchBar(frame: CGRect(x: 0, y: 0, width: ScreenWidth - 114, height: 44))
+        serchBar.placeholder = "输入城市名或拼音查询"
+        serchBar.backgroundImage = UIColor.creatImageWithColor(color: UIColor.clear)
+        serchBar.delegate = self
+        view.addSubview(serchBar)
+        return view
+    }()
     /// 懒加载 城市数据
     lazy var cityDic: [String: [String]] = { () -> [String : [String]] in
         let path = Bundle.main.path(forResource: "cities.plist", ofType: nil)
@@ -49,6 +60,7 @@ class CitySelectorViewController: UIViewController {
     }
 
     private func setupUI() {
+        self.navigationItem.titleView = searchView
         self.title = "选择城市"
         self.navigationController?.navigationBar.titleTextAttributes = {[
             NSForegroundColorAttributeName: UIColor.white,
@@ -65,6 +77,7 @@ class CitySelectorViewController: UIViewController {
 //        tableView.sectionIndexTrackingBackgroundColor = UIColor.white
         tableView.sectionIndexBackgroundColor = UIColor.clear
         self.view.addSubview(tableView)
+        
 
     }
     
@@ -72,6 +85,14 @@ class CitySelectorViewController: UIViewController {
         print("我走了")
     }
 
+}
+
+// MARK: searchBar 代理方法
+extension CitySelectorViewController: UISearchBarDelegate {
+    func searchBarShouldBeginEditing(_ searchBar: UISearchBar) -> Bool {
+        SoolyCover.show(frame: CGRect(x: 0, y: 64, width: ScreenWidth, height: ScreenHeight), type: .gray)
+        return true
+    }
 }
 
 // MARK: tableView 代理方法、数据源方法
@@ -102,7 +123,6 @@ extension CitySelectorViewController: UITableViewDataSource, UITableViewDelegate
             let cell = tableView.dequeueReusableCell(withIdentifier: recentCell, for: indexPath) as? RecentCitiesTableViewCell
             cell?.callBack = { [weak self] (btn) in
                 /// 请求数据
-                GetWeatherData.weatherData(cityName: btn.titleLabel?.text ?? "")
                 self?.navigationController?.pushViewController(HomeViewController(), animated: true)
             }
             return cell!

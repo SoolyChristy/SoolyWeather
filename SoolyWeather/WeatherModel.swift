@@ -130,7 +130,6 @@ class Weather: NSObject,HandyJSON,NSCoding {
     }
     
     func pm2_5Icon(index: String) -> UIImage {
-        print(index)
         switch index {
         case "优":
             return UIImage(named: "nice")!

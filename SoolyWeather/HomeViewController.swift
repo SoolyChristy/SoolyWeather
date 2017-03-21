@@ -15,7 +15,7 @@ class HomeViewController: UIViewController {
     
     lazy var page: UIPageControl = {
         let page = UIPageControl()
-        page.numberOfPages = (dataArray?.count)!
+        page.numberOfPages = dataArray?.count ?? 0
         page.pageIndicatorTintColor = cellColor
         page.currentPageIndicatorTintColor = mainColor
         page.currentPage = 0
@@ -41,7 +41,12 @@ class HomeViewController: UIViewController {
         super.viewDidLoad()
         /// 接收通知
         NotificationCenter.default.addObserver(self, selector: #selector(updateUI), name: WeatherDataNotificationName, object: nil)
+        /// 设置UI
         setupUI()
+        /// 若是 push 则添加边缘手势
+        if (self.navigationController?.childViewControllers.count)! > 1 {
+            DrawerViewController.shared?.addScreenEdgePanGestureRecognizerToView(view: self.collectionView)
+        }
     }
     
     // MARK: 移除通知
@@ -55,13 +60,26 @@ class HomeViewController: UIViewController {
             NSForegroundColorAttributeName: UIColor.white,
             NSFontAttributeName: UIFont(name: "AdobeClean-Light", size: 18.0)!
             ]}()
-        /// 创建左边item
+        /// 设置返回按钮
+        let item = UIBarButtonItem(title: "", style: .plain, target: self, action: nil)
+        self.navigationItem.backBarButtonItem = item
+        
+        /// 创建右边边item
+        let rightBtn = UIButton(type: .custom)
+        rightBtn.setTitle("城市", for: .normal)
+        rightBtn.sizeToFit()
+        rightBtn.addTarget(self, action: #selector(rightBtnClick), for: .touchUpInside)
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: rightBtn)
+        /// 左边item
         let leftBtn = UIButton(type: .custom)
-        leftBtn.setTitle("城市", for: .normal)
+        leftBtn.setImage(UIImage(named: "menu"), for: .normal)
         leftBtn.sizeToFit()
+        leftBtn.imageView?.contentMode = .scaleAspectFill
         leftBtn.addTarget(self, action: #selector(leftBtnClick), for: .touchUpInside)
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(customView: leftBtn)
+        
         self.view.addSubview(self.collectionView)
+        
         /// 注册cell
         collectionView.register(UINib(nibName: "SWCollectionViewCell", bundle: Bundle.main), forCellWithReuseIdentifier: reuseID)
         
@@ -77,7 +95,12 @@ class HomeViewController: UIViewController {
         
     }
     
-    @objc private func leftBtnClick() {
+    @objc func leftBtnClick() {
+        DrawerViewController.shared?.showMenu()
+    }
+    
+    // MARK:
+    @objc private func rightBtnClick() {
         self.navigationController?.pushViewController(CitySelectorViewController(), animated: true)
     }
     
@@ -86,7 +109,7 @@ class HomeViewController: UIViewController {
         /// 更新数据
         DispatchQueue.main.async {
             // 设置分页控制器的 总数(当只有一页时不显示)
-            if (dataArray?.count)! > 1 {
+            if dataArray?.count ?? 0 > 1 {
                 self.page.numberOfPages = (dataArray?.count)!
             }
             self.collectionView.reloadData()
@@ -103,11 +126,10 @@ extension HomeViewController: UICollectionViewDelegate,UICollectionViewDataSourc
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        if dataArray?.count == 0 {
+        guard let dataArr = dataArray else {
             return 1
-        }else {
-            return dataArray!.count
         }
+        return dataArr.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {

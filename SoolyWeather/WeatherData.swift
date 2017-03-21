@@ -14,7 +14,6 @@ class GetWeatherData {
     private let appCode = "647138002fd44f8abcaefe88afcfb71f"
     private let host = "http://jisutianqi.market.alicloudapi.com"
     private let path = "/weather/query"
-    var weatherData: Weather = Weather()
     
     /// 创建单例
     static let shared = GetWeatherData()
@@ -55,14 +54,14 @@ class GetWeatherData {
             let dict = json["result"].dictionaryObject as? NSDictionary
             
             // 利用HandyJSON 字典转模型
-            self.weatherData = Weather.deserialize(from: dict) ?? Weather()
+            let weatherData = Weather.deserialize(from: dict) ?? Weather()
 //            self.weatherData = JSONDeserializer<Weather>.deserializeFrom(dict: dict) ?? Weather()
-            print("天气数据请求完毕,请求城市 " + (self.weatherData.city ?? "nil"))
-            
-            /// 全局数据数组增加数据
-            self.dataArrayaddData(data: self.weatherData, isUpdateData: isUpdateData)
-            
-            /// 数据请求完毕后 发送通知
+            print("天气数据请求完毕,请求城市 " + (weatherData.city ?? "nil"))
+
+            // 全局数据数组增加数据
+            self.dataArrayaddData(data: weatherData, isUpdateData: isUpdateData)
+            print(weatherData)
+            // 数据请求完毕后 发送通知
             NotificationCenter.default.post(name: WeatherDataNotificationName, object: nil, userInfo: nil)
             
         }).resume()
@@ -70,33 +69,38 @@ class GetWeatherData {
     
     // MARK: 全局数据数组增加数据
     private func dataArrayaddData(data: Weather, isUpdateData: Bool = false) {
-        let count = dataArray?.count
         
-        // 如果只是更新首页数据则不必 替换顺序
-        if isUpdateData {
-            for i in 0..<count! {
-                if data.city == dataArray?[i].city {
-                    dataArray?[i] = data
+        guard var dataArr = dataArray else {
+            // 若 dataArray为空 则初始化数组 并添加数据
+            dataArray = []
+            dataArray?.append(data)
+            return
+        }
+        if isUpdateData == true {
+            // 若是更新首页数据 且 数据数组存在同名城市数据 则 替换该数据
+            for i in 0..<dataArr.count {
+                if data.city == dataArr[i].city {
+                    dataArr[i] = data
+                    dataArray = dataArr
                     return
                 }
             }
         }else {
-            // 判断数组里是否存在同名城市数据，若存在则 删除旧数据 -> 插入新数据 (最多4组数据)
-            if count != 0 {
-                for i in 0..<count! {
-                    if data.city == dataArray?[i].city {
-                        dataArray?.remove(at: i)
-                        dataArray?.insert(data, at: 0)
-                        return
-                    }
-                }
-                if count == 4 {
-                    dataArray?.remove(at: 3)
-                    dataArray?.insert(data, at: 0)
+            // 若不是更新首页数据 且 数据存在同名城市数据 则 删除该数据 将新数据插入0号位置
+            for i in 0..<dataArr.count {
+                if data.city == dataArr[i].city {
+                    dataArr.remove(at: i)
+                    dataArr.insert(data, at: 0)
+                    dataArray = dataArr
                     return
                 }
             }
-            dataArray?.insert(data, at: 0)
+            // 若数据量超过规定大小则删除末尾数据 插入新数据
+            if dataArr.count == 4 {
+                dataArr.removeLast()
+            }
+            dataArr.insert(data, at: 0)
         }
+        dataArray = dataArr
     }
 }

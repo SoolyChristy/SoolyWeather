@@ -9,7 +9,7 @@
 import UIKit
 
 class MainViewController: UINavigationController {
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -22,14 +22,14 @@ class MainViewController: UINavigationController {
         self.navigationBar.titleTextAttributes = ["NSForegroundColorAttributeName": UIColor.white]
         self.navigationBar.titleTextAttributes = {[
             NSForegroundColorAttributeName: UIColor.white,
-            NSFontAttributeName: UIFont(name: "Heiti SC", size: 24.0)!
+            NSFontAttributeName: UIFont(name: "Adobe clean", size: 24.0)!
             ]}()
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
     
-
+//    override func pushViewController(_ viewController: UIViewController, animated: Bool) {
+//        if childViewControllers.count > 1 {
+//            self.navigationItem.hidesBackButton = true
+//        }
+//        super.pushViewController(viewController, animated: animated)
+//    }
 }

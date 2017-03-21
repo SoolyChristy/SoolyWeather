@@ -24,7 +24,10 @@ class RecentCitiesTableViewCell: UITableViewCell {
     }
     
     private func setupUI() {
+        
         self.backgroundColor = cellColor
+        
+        // 动态创建最近城市btn
         guard let dataCount = dataArray?.count else {
             return
         }
