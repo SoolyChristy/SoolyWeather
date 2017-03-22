@@ -27,7 +27,7 @@
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="18°" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fOn-5Z-7wV" userLabel="温度">
                         <rect key="frame" x="28" y="28" width="44" height="34"/>
                         <fontDescription key="fontDescription" name="AdobeClean-Light" family="Adobe Clean" pointSize="34"/>
-                        <color key="textColor" red="0.4392156862745098" green="0.4392156862745098" blue="0.4392156862745098" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tGs-7P-AWu" userLabel="间隔">
@@ -39,28 +39,28 @@
                         </constraints>
                     </view>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="武汉市" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J9t-Mx-vy0" userLabel="城市名">
-                        <rect key="frame" x="89" y="32.5" width="54.5" height="25.5"/>
+                        <rect key="frame" x="89" y="32" width="55" height="26"/>
                         <fontDescription key="fontDescription" name="PingFangSC-Medium" family="PingFang SC" pointSize="18"/>
-                        <color key="textColor" red="0.4392156862745098" green="0.4392156862745098" blue="0.4392156862745098" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="多云转晴" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EL0-Ba-xgj" userLabel="天气情况">
-                        <rect key="frame" x="28" y="63" width="57.5" height="17"/>
+                        <rect key="frame" x="28" y="63" width="58" height="17"/>
                         <fontDescription key="fontDescription" type="system" weight="light" pointSize="14"/>
-                        <nil key="textColor"/>
+                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sun_s" translatesAutoresizingMaskIntoConstraints="NO" id="QC6-Em-VVi">
-                        <rect key="frame" x="318" y="45.5" width="38" height="38"/>
+                        <rect key="frame" x="318" y="45" width="38" height="38"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="38" id="afj-Kx-7pB"/>
                             <constraint firstAttribute="height" constant="38" id="bJX-e4-Dml"/>
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pKT-4u-bXh">
-                        <rect key="frame" x="93.5" y="63" width="35" height="17"/>
+                        <rect key="frame" x="94" y="63" width="35" height="17"/>
                         <fontDescription key="fontDescription" type="system" weight="light" pointSize="14"/>
-                        <nil key="textColor"/>
+                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>

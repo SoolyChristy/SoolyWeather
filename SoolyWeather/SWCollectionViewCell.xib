@@ -33,13 +33,13 @@
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="呼和浩特" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iOI-J1-xqC">
                         <rect key="frame" x="132" y="30" width="80" height="28"/>
                         <fontDescription key="fontDescription" name="PingFangSC-Medium" family="PingFang SC" pointSize="20"/>
-                        <nil key="textColor"/>
+                        <color key="textColor" red="0.43921568630000002" green="0.43921568630000002" blue="0.43921568630000002" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="晴转多云" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Htl-cf-9qK">
                         <rect key="frame" x="132" y="65" width="70" height="21"/>
                         <fontDescription key="fontDescription" type="system" weight="thin" pointSize="17"/>
-                        <nil key="textColor"/>
+                        <color key="textColor" red="0.43921568630000002" green="0.43921568630000002" blue="0.43921568630000002" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="21" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qME-nt-zEs">
@@ -49,7 +49,7 @@
                             <constraint firstAttribute="width" constant="250" id="Se8-C2-S0S"/>
                         </constraints>
                         <fontDescription key="fontDescription" name="PingFangSC-Ultralight" family="PingFang SC" pointSize="200"/>
-                        <nil key="textColor"/>
+                        <color key="textColor" red="0.43921568630000002" green="0.43921568630000002" blue="0.43921568630000002" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceHorizontal="YES" showsHorizontalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="XQh-L1-nC5">
@@ -65,7 +65,7 @@
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                     </collectionView>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZI2-Z5-pDI">
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZI2-Z5-pDI" userLabel="分割线">
                         <rect key="frame" x="0.0" y="436" width="343" height="1"/>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -84,9 +84,43 @@
                             <constraint firstAttribute="height" constant="25" id="wQ9-i2-MGa"/>
                         </constraints>
                         <fontDescription key="fontDescription" name="AdobeClean-Light" family="Adobe Clean" pointSize="17"/>
-                        <nil key="textColor"/>
+                        <color key="textColor" red="0.43921568630000002" green="0.43921568630000002" blue="0.43921568630000002" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sga-jj-duE">
+                        <rect key="frame" x="6.5" y="401" width="110" height="30"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="30" id="IJd-tO-WiX"/>
+                            <constraint firstAttribute="width" constant="110" id="kdR-Gk-zD3"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <inset key="titleEdgeInsets" minX="5" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        <state key="normal" image="windspeed">
+                            <color key="titleColor" red="0.4392156862745098" green="0.4392156862745098" blue="0.4392156862745098" alpha="1" colorSpace="calibratedRGB"/>
+                        </state>
+                    </button>
+                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VUG-rX-DmB">
+                        <rect key="frame" x="226.5" y="401" width="110" height="30"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="30" id="6PJ-Lq-hqu"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <inset key="titleEdgeInsets" minX="5" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        <state key="normal" image="shidu">
+                            <color key="titleColor" red="0.43921568630000002" green="0.43921568630000002" blue="0.43921568630000002" alpha="1" colorSpace="calibratedRGB"/>
+                        </state>
+                    </button>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YhK-v4-H94">
+                        <rect key="frame" x="116.5" y="401.5" width="110" height="30"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="30" id="hik-wT-SYP"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <inset key="titleEdgeInsets" minX="5" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        <state key="normal" image="nice">
+                            <color key="titleColor" red="0.43921568630000002" green="0.43921568630000002" blue="0.43921568630000002" alpha="1" colorSpace="calibratedRGB"/>
+                        </state>
+                    </button>
                 </subviews>
             </view>
             <constraints>
@@ -94,18 +128,28 @@
                 <constraint firstItem="XQh-L1-nC5" firstAttribute="top" secondItem="ZI2-Z5-pDI" secondAttribute="bottom" id="3Ek-hW-XQz"/>
                 <constraint firstItem="Htl-cf-9qK" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="65" id="76t-hS-aqd"/>
                 <constraint firstItem="L2n-4S-tMS" firstAttribute="top" secondItem="qME-nt-zEs" secondAttribute="top" id="7ik-lI-hHr"/>
+                <constraint firstItem="VUG-rX-DmB" firstAttribute="leading" secondItem="YhK-v4-H94" secondAttribute="trailing" id="Beg-nj-CMH"/>
+                <constraint firstItem="YhK-v4-H94" firstAttribute="centerY" secondItem="sga-jj-duE" secondAttribute="centerY" id="EZl-Dt-w0t"/>
                 <constraint firstAttribute="bottom" secondItem="XQh-L1-nC5" secondAttribute="bottom" id="Ij5-Lh-DX6"/>
                 <constraint firstItem="Ntg-oi-OHw" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="Onc-gp-fYb"/>
                 <constraint firstItem="Dy7-rg-R9z" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="20" id="QVz-fm-Pso"/>
                 <constraint firstItem="iOI-J1-xqC" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="Rbd-rv-NgF"/>
                 <constraint firstItem="qME-nt-zEs" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="Rff-Ra-thG"/>
+                <constraint firstItem="ZI2-Z5-pDI" firstAttribute="top" secondItem="sga-jj-duE" secondAttribute="bottom" constant="5" id="Txd-ip-E0j"/>
+                <constraint firstItem="VUG-rX-DmB" firstAttribute="width" secondItem="sga-jj-duE" secondAttribute="width" id="Uit-h3-MCf"/>
                 <constraint firstItem="XQh-L1-nC5" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="XZ5-Aq-vC8"/>
                 <constraint firstItem="L2n-4S-tMS" firstAttribute="leading" secondItem="qME-nt-zEs" secondAttribute="trailing" constant="-20" id="aco-Fw-KGW"/>
                 <constraint firstAttribute="trailing" secondItem="XQh-L1-nC5" secondAttribute="trailing" id="fbP-Bt-erE"/>
                 <constraint firstAttribute="trailing" secondItem="ZI2-Z5-pDI" secondAttribute="trailing" id="hx5-Jz-f6g"/>
                 <constraint firstItem="Htl-cf-9qK" firstAttribute="leading" secondItem="iOI-J1-xqC" secondAttribute="leading" id="lUq-kY-km6"/>
+                <constraint firstItem="YhK-v4-H94" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="nAC-S0-JFE"/>
+                <constraint firstItem="YhK-v4-H94" firstAttribute="width" secondItem="sga-jj-duE" secondAttribute="width" id="o2x-9R-7vM"/>
                 <constraint firstItem="qME-nt-zEs" firstAttribute="top" secondItem="Dy7-rg-R9z" secondAttribute="bottom" constant="45" id="pRF-b9-SNy"/>
                 <constraint firstItem="Dy7-rg-R9z" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="30" id="psj-Zw-O3B"/>
+                <constraint firstItem="VUG-rX-DmB" firstAttribute="centerY" secondItem="YhK-v4-H94" secondAttribute="centerY" id="q4F-18-Prk"/>
+                <constraint firstItem="YhK-v4-H94" firstAttribute="leading" secondItem="sga-jj-duE" secondAttribute="trailing" id="rmR-wW-dIB"/>
+                <constraint firstItem="VUG-rX-DmB" firstAttribute="height" secondItem="sga-jj-duE" secondAttribute="height" id="sVC-P4-DzV"/>
+                <constraint firstItem="YhK-v4-H94" firstAttribute="height" secondItem="sga-jj-duE" secondAttribute="height" id="tot-am-CTM"/>
                 <constraint firstItem="Ntg-oi-OHw" firstAttribute="top" secondItem="qME-nt-zEs" secondAttribute="bottom" constant="5" id="v4F-Jg-myZ"/>
                 <constraint firstItem="iOI-J1-xqC" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="30" id="zLv-uv-54T"/>
             </constraints>
@@ -113,16 +157,21 @@
             <connections>
                 <outlet property="cityLabel" destination="iOI-J1-xqC" id="ViT-Wt-5jm"/>
                 <outlet property="forecastCollectionView" destination="XQh-L1-nC5" id="rfC-U5-l2j"/>
+                <outlet property="humidity" destination="VUG-rX-DmB" id="rs0-K4-iai"/>
                 <outlet property="iconView" destination="Dy7-rg-R9z" id="cUF-2q-QWU"/>
-                <outlet property="separatorView" destination="ZI2-Z5-pDI" id="fT4-7Q-uSr"/>
+                <outlet property="pm2_5" destination="YhK-v4-H94" id="OpR-n7-GKN"/>
                 <outlet property="tempLabel" destination="qME-nt-zEs" id="LTJ-uL-xWv"/>
                 <outlet property="upadateTime" destination="Ntg-oi-OHw" id="6b5-0b-oAB"/>
                 <outlet property="weatherLabel" destination="Htl-cf-9qK" id="V97-QD-EKr"/>
+                <outlet property="windSpeed" destination="sga-jj-duE" id="F3v-4Q-k2K"/>
             </connections>
-            <point key="canvasLocation" x="-69.5" y="251.5"/>
+            <point key="canvasLocation" x="-348" y="223"/>
         </collectionViewCell>
     </objects>
     <resources>
         <image name="cloud" width="86" height="71"/>
+        <image name="nice" width="35" height="35"/>
+        <image name="shidu" width="35" height="35"/>
+        <image name="windspeed" width="35" height="35"/>
     </resources>
 </document>

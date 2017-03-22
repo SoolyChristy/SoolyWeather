@@ -22,15 +22,13 @@ class SWCollectionViewCell: UICollectionViewCell {
     /// 温度
     @IBOutlet weak var tempLabel: UILabel!
     /// 空气质量btn
-    lazy var pm2_5: UIButton = UIButton(imageName: "nice")
+    @IBOutlet weak var pm2_5: UIButton!
     /// 风速btn
-    lazy var windSpeed: UIButton = UIButton(imageName: "windspeed")
+    @IBOutlet weak var windSpeed: UIButton!
     /// 更新时间
     @IBOutlet weak var upadateTime: UILabel!
     /// 湿度btn
-    lazy var humidity: UIButton = UIButton(imageName: "shidu")
-    /// 分割线
-    @IBOutlet weak var separatorView: UIView!
+    @IBOutlet weak var humidity: UIButton!
     /// 数据
     var weatherData: Weather? {
         didSet {
@@ -39,10 +37,10 @@ class SWCollectionViewCell: UICollectionViewCell {
             weatherLabel.text = weatherData?.weather ?? "无数据"
             tempLabel.text = weatherData?.temp ?? "无数据"
             upadateTime.text = (weatherData?.updatetime ?? "无数据") + " 发布"
-            pm2_5.btnSetData(data: weatherData?.aqi?.quality ?? "无数据")
+            pm2_5.setTitle(weatherData?.aqi?.quality ?? "无数据", for: .normal)
             pm2_5.setImage(weatherData?.pm2_5Icon(index: weatherData?.aqi?.quality ?? "无数据"), for: .normal)
-            windSpeed.btnSetData(data: weatherData?.windpower ?? "无数据")
-            humidity.btnSetData(data: weatherData?.humidity ?? "无数据")
+            windSpeed.setTitle(weatherData?.windpower ?? "无数据", for: .normal)
+            humidity.setTitle(weatherData?.humidity ?? "无数据", for: .normal)
             iconView.image = Weather.weatherIcon(weather: weatherData?.weather ?? "", isBigPic: true)
             
             /// 子 collectionView 刷新数据
@@ -56,8 +54,6 @@ class SWCollectionViewCell: UICollectionViewCell {
     }
     
     private func setupUI() {
-        
-        setupBtn()
         self.backgroundColor = UIColor.white
         /// 注册 xib
         forecastCollectionView.register(UINib(nibName: "ForecastCollectionViewCell", bundle: Bundle.main), forCellWithReuseIdentifier: reuseID)
@@ -70,35 +66,6 @@ class SWCollectionViewCell: UICollectionViewCell {
         forecastCollectionView.collectionViewLayout = layout
         forecastCollectionView.dataSource = self
         forecastCollectionView.delegate = self
-        
-        // 设置颜色
-        cityLabel.textColor = mainColor
-        tempLabel.textColor = mainColor
-        weatherLabel.textColor = mainColor
-        upadateTime.textColor = mainColor
-    }
-
-    // MARK: 创建三个指标btn
-    private func setupBtn() {
-        /// btn间距
-        let margin: CGFloat = 1
-        /// btn宽度
-        let width: CGFloat = 108
-        /// btn高度
-        let height: CGFloat = 30
-        /// 与边缘的间距
-        let leftRightMargin = (ScreenWidth - 3 * width + 2 * margin) / 2
-        /// btn y值
-        let y: CGFloat = separatorView.frame.origin.y - 20
-        
-        windSpeed.frame = CGRect(x: leftRightMargin, y: y, width: width, height: height)
-        pm2_5.frame = CGRect(x: leftRightMargin + margin + width, y: y, width: width, height: height)
-        humidity.frame = CGRect(x: leftRightMargin + 2 * margin + 2 * width, y: y, width: width, height: height)
-        
-        self.addSubview(pm2_5)
-        self.addSubview(windSpeed)
-        self.addSubview(humidity)
-        
     }
     
     }
@@ -110,18 +77,19 @@ extension SWCollectionViewCell: UICollectionViewDelegate,UICollectionViewDataSou
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        if weatherData != nil {
-            return weatherData?.daily?.count ?? 7
-        }else {
+        guard  let weatherData = weatherData else {
             return 7
         }
+        return weatherData.daily?.count ?? 7
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseID, for: indexPath) as? ForecastCollectionViewCell
-        if weatherData != nil {
-            cell?.forecastData = weatherData?.daily?[indexPath.row] ?? Forecast()
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseID, for: indexPath) as! ForecastCollectionViewCell
+        guard let weatherData = weatherData else {
+            cell.forecastData = Forecast()
+            return cell
         }
-        return cell!
+        cell.forecastData = weatherData.daily?[indexPath.row] ?? Forecast()
+        return cell
     }
 }

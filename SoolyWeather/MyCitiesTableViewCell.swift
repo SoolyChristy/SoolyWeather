@@ -29,7 +29,24 @@ class MyCitiesTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         self.backgroundView = UIImageView(image: UIImage(named: "bg"))
+        self.selectedBackgroundView = UIImageView(image: UIImage(named: "bg"))
+        self.backgroundColor = UIColor.clear
     }
 
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        // 遍历cell的subviews 自定义左滑删除btn
+        for view in subviews {
+            view.backgroundColor = UIColor.clear
+            if view.isKind(of: NSClassFromString("UITableViewCellDeleteConfirmationView")!) {
+                for btn in view.subviews {
+                    if btn.isKind(of: UIButton.self) {
+                        (btn as! UIButton).setBackgroundImage(UIImage(named: "bg"), for: .normal)
+                        (btn as! UIButton).backgroundColor = UIColor.clear
+                    }
+                }
+            }
+        }
+    }
     
 }

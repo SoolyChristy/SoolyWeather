@@ -39,11 +39,12 @@ class HomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        /// 接收通知
+        // 接收通知
         NotificationCenter.default.addObserver(self, selector: #selector(updateUI), name: WeatherDataNotificationName, object: nil)
-        /// 设置UI
+        NotificationCenter.default.addObserver(self, selector: #selector(updateUI), name: deleteDataNotificationName, object: nil)
+        // 设置UI
         setupUI()
-        /// 若是 push 则添加边缘手势
+        // 若是 push 则添加边缘手势
         if (self.navigationController?.childViewControllers.count)! > 1 {
             DrawerViewController.shared?.addScreenEdgePanGestureRecognizerToView(view: self.collectionView)
         }
@@ -95,6 +96,7 @@ class HomeViewController: UIViewController {
         
     }
     
+    // MARK: 点击左边菜单按钮
     @objc func leftBtnClick() {
         DrawerViewController.shared?.showMenu()
     }
@@ -104,13 +106,24 @@ class HomeViewController: UIViewController {
         self.navigationController?.pushViewController(CitySelectorViewController(), animated: true)
     }
     
-    // MARK: 收到数据后 更新UI
+    // MARK: 收到通知后 更新UI
     @objc private func updateUI() {
         /// 更新数据
         DispatchQueue.main.async {
             // 设置分页控制器的 总数(当只有一页时不显示)
-            if dataArray?.count ?? 0 > 1 {
+            let count = dataArray?.count ?? 0
+            if count > 1 {
                 self.page.numberOfPages = (dataArray?.count)!
+            } else if count == 1 {
+                self.page.numberOfPages = 0
+            } else {
+                // 若没有数据
+                SoolyCover.hide()
+                DrawerViewController.shared?.hideMenu()
+                let vc = CitySelectorViewController()
+                vc.navigationItem.hidesBackButton = true
+                self.navigationController?.pushViewController(vc, animated: false)
+                return
             }
             self.collectionView.reloadData()
         }
@@ -133,13 +146,13 @@ extension HomeViewController: UICollectionViewDelegate,UICollectionViewDataSourc
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseID, for: indexPath) as? SWCollectionViewCell
-//        cell?.weatherData = self.weatherData
-        cell?.weatherData = Weather()
-        if dataArray?.count != 0 {
-            cell?.weatherData = dataArray?[indexPath.row] ?? Weather()
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseID, for: indexPath) as!SWCollectionViewCell
+        guard let dataArray = dataArray else {
+            cell.weatherData = Weather()
+            return cell
         }
-        return cell!
+        cell.weatherData = dataArray[indexPath.row]
+        return cell
     }
     
     // MARK: 滑动时更新数据

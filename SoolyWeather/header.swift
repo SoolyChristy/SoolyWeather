@@ -48,7 +48,9 @@ let menuHeadViewHeight: CGFloat = 160
 /// 菜单栏我的城市cell高度
 let myCitiesCellHeight: CGFloat = 95
 /// 我的城市间距
-let myCityMargin: CGFloat = 25
+let myCityMargin: CGFloat = 10
 
-/// 通知
-let WeatherDataNotificationName = Notification.Name(rawValue: "GetWeatherDataSuccessful")
+/// 请求数据完成通知
+let WeatherDataNotificationName = Notification.Name(rawValue: "GetWeatherDataSuccessfuly")
+/// 删除数据完成通知
+let deleteDataNotificationName = NSNotification.Name(rawValue: "DeleteDataSuccessfuly")

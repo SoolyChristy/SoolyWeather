@@ -5,6 +5,20 @@
       "scale" : "1x"
     },
     {
+      "resizing" : {
+        "mode" : "9-part",
+        "center" : {
+          "mode" : "stretch",
+          "width" : 1,
+          "height" : 28
+        },
+        "cap-insets" : {
+          "bottom" : 18,
+          "top" : 0,
+          "right" : 14,
+          "left" : 13
+        }
+      },
       "idiom" : "universal",
       "filename" : "bg@2x.png",
       "scale" : "2x"

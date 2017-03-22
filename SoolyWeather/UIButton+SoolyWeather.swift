@@ -25,10 +25,4 @@ extension UIButton {
         imageView?.contentMode = .scaleAspectFit
 
     }
-
-    /// 更新指标btn的数据
-    func btnSetData(data: String) {
-        let att = NSAttributedString(string: data, attributes: btnAttributes)
-        setAttributedTitle(att, for: .normal)
-    }
 }

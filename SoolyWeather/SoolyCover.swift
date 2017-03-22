@@ -38,6 +38,10 @@ class SoolyCover: UIView {
         UIApplication.shared.delegate?.window??.addSubview(shared)
     }
     
+    class func hide() {
+        shared.removeFromSuperview()
+    }
+    
     // MARK: 点击蒙版调用
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesBegan(touches, with: event)
