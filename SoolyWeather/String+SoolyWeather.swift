@@ -11,7 +11,7 @@ import UIKit
 
 extension String {
     // MARK: 汉字 -> 拼音
-    func chineseToPinyin(chinese: String) -> String {
+    func chineseToPinyin() -> String {
         
         let stringRef = NSMutableString(string: self) as CFMutableString
         // 转换为带音标的拼音
@@ -21,6 +21,25 @@ extension String {
         let pinyin = stringRef as String
         
         return pinyin
+    }
+    
+    // MARK: 判断是否含有中文
+    func isIncludeChineseIn() -> Bool {
+        
+        for (_, value) in self.characters.enumerated() {
+            
+            if ("\u{4E00}" <= value  && value <= "\u{9FA5}") {
+                return true
+            }
+        }
+        
+        return false
+    }
+    
+    // MARK: 获取第一个字符
+    func first() -> String {
+        let index = self.index(self.startIndex, offsetBy: 1)
+        return self.substring(to: index)
     }
     
 }
