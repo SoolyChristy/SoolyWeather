@@ -20,6 +20,7 @@ class CitySelectorViewController: UIViewController {
     /// 搜索控制器
     lazy var searchVC: UISearchController = {
        let searchVc = UISearchController(searchResultsController: self.searchResultVC)
+        searchVc.delegate = self
         searchVc.searchResultsUpdater = self
         searchVc.hidesNavigationBarDuringPresentation = false
         /**
@@ -65,12 +66,13 @@ class CitySelectorViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
-        print(self.titleArray)
     }
-
+    
     private func setupUI() {
         // 在导航条添加searchBar
-        self.navigationItem.titleView = searchVC.searchBar
+        let titleView = UIView(frame: searchVC.searchBar.frame)
+        titleView.addSubview(searchVC.searchBar)
+        self.navigationItem.titleView = titleView
         self.title = "选择城市"
         self.navigationController?.navigationBar.titleTextAttributes = {[
             NSForegroundColorAttributeName: UIColor.white,
@@ -96,96 +98,29 @@ class CitySelectorViewController: UIViewController {
 }
 
 // MARK: UISearchResultsUpdating
-extension CitySelectorViewController: UISearchResultsUpdating {
+extension CitySelectorViewController: UISearchResultsUpdating, UISearchControllerDelegate {
     func updateSearchResults(for searchController: UISearchController) {
-        if searchVC.searchBar.text != "" {
-            searchResultVC.isFrameChange = true
-        }
-        getSearchResultArray(searchBarText: searchVC.searchBar.text ?? "")
+        getSearchResultArray(searchBarText: searchController.searchBar.text ?? "")
     }
     
-    private func getSearchResultArray(searchBarText: String) {
-        var resultArray:[String] = []
-        if searchBarText == "" {
-            searchResultVC.resultArray = resultArray
-            searchResultVC.tableView.reloadData()
-            return
-        }
-        // 若文字为中文
-        if searchBarText.isIncludeChineseIn() {
-            // 转拼音
-            let pinyin = searchBarText.chineseToPinyin()
-            // 获取大写首字母
-            let first = String(pinyin[pinyin.startIndex]).uppercased()
-            guard let dic = cityDic[first] else {
-                return
-            }
-            for str in dic {
-                if str.hasPrefix(searchBarText) {
-                    resultArray.append(str)
-                }
-            }
-            searchResultVC.resultArray = resultArray
-            searchResultVC.tableView.reloadData()
-        }else {
-        // 若文字是拼音
-            // 若字符个数为1
-            if searchBarText.characters.count == 1 {
-                guard let dic = cityDic[searchBarText.uppercased()] else {
-                    return
-                }
-                resultArray = dic
-                searchResultVC.resultArray = resultArray
-                searchResultVC.tableView.reloadData()
-            }else {
-                guard let dic = cityDic[searchBarText.first().uppercased()] else {
-                    return
-                }
-                for str in dic {
-                    // 去空格
-                    let py = String(str.chineseToPinyin().characters.filter({ $0 != " "}))
-                    let range = py.range(of: searchBarText)
-                    if range != nil {
-                        resultArray.append(str)
-                    }
-                }
-                // 加入首字母判断 如 cq => 重庆 bj => 北京
-                if resultArray.count == 0 {
-                    for str in dic {
-                        // 北京 => bei jing
-                        let pinyin = str.chineseToPinyin()
-                        // 获取空格的index
-                        let a = pinyin.characters.index(of: " ")
-                        let index = pinyin.index(a!, offsetBy: 2)
-                        // offsetBy: 2 截取 bei j
-                        // offsetBy: 1 截取 bei+空格
-                        // substring(to: index) 不包含 index最后那个下标
-                        let py = pinyin.substring(to: index)
-                        /// 获取第二个首字母
-                        ///
-                        ///     py = "bei j"
-                        ///     last = "j"
-                        ///
-                        let last = py.substring(from: py.index(py.endIndex, offsetBy: -1))
-                        /// 两个首字母
-                        let pyIndex = String(pinyin[pinyin.startIndex]) + last
-                        
-                        if searchBarText == pyIndex {
-                            resultArray.append(str)
-                        }
-                    }
-                }
-                searchResultVC.resultArray = resultArray
-                searchResultVC.tableView.reloadData()
-            }
-        }
+    func willPresentSearchController(_ searchController: UISearchController) {
+        searchController.searchBar.showsCancelButton = false
     }
+    
+    func presentSearchController(_ searchController: UISearchController) {
+        searchController.searchBar.showsCancelButton = false
+    }
+    
+    // 隐藏取消按钮
+    func didPresentSearchController(_ searchController: UISearchController) {
+        searchController.searchBar.showsCancelButton = false
+    }
+    
 }
 
 // MARK: searchBar 代理方法
 extension CitySelectorViewController: UISearchBarDelegate {
     func searchBarShouldBeginEditing(_ searchBar: UISearchBar) -> Bool {
-        
         return true
     }
 }
@@ -215,8 +150,11 @@ extension CitySelectorViewController: UITableViewDataSource, UITableViewDelegate
         }else if indexPath.section == 1 {
             
             let cell = tableView.dequeueReusableCell(withIdentifier: recentCell, for: indexPath) as! RecentCitiesTableViewCell
+            
+            // 点击最近城市按钮调用此闭包
             cell.callBack = { [weak self] (btn) in
                 // 请求数据
+                GetWeatherData.weatherData(cityName: btn.titleLabel?.text ?? "")
                 self?.navigationController?.pushViewController(HomeViewController(), animated: true)
             }
             return cell
@@ -224,7 +162,7 @@ extension CitySelectorViewController: UITableViewDataSource, UITableViewDelegate
             
             let cell = tableView.dequeueReusableCell(withIdentifier: hotCityCell, for: indexPath) as! HotCityTableViewCell
             
-            // 当点击热门城市按钮时调用此闭包
+            // 点击热门城市按钮时调用此闭包
             cell.callBack = { [weak self] (btn) in
                 // 请求数据
                 GetWeatherData.weatherData(cityName: btn.titleLabel?.text ?? "")
@@ -294,6 +232,92 @@ extension CitySelectorViewController: UITableViewDataSource, UITableViewDelegate
             return (btnHeight + 2 * btnMargin) + (btnMargin + btnHeight) * CGFloat(row)
         }else{
             return 42
+        }
+    }
+}
+
+// MARK: 搜索逻辑
+extension CitySelectorViewController {
+    fileprivate func getSearchResultArray(searchBarText: String) {
+        var resultArray:[String] = []
+        if searchBarText == "" {
+            searchResultVC.resultArray = resultArray
+            searchResultVC.tableView.reloadData()
+            return
+        }
+        // 传递闭包 当点击’搜索结果‘的cell调用
+        searchResultVC.callBack = { [weak self] in
+            // 搜索完成 关闭resultVC
+            self?.searchVC.isActive = false
+            self?.navigationController?.pushViewController(HomeViewController(), animated: true)
+        }
+        // 中文搜索
+        if searchBarText.isIncludeChineseIn() {
+            // 转拼音
+            let pinyin = searchBarText.chineseToPinyin()
+            // 获取大写首字母
+            let first = String(pinyin[pinyin.startIndex]).uppercased()
+            guard let dic = cityDic[first] else {
+                return
+            }
+            for str in dic {
+                if str.hasPrefix(searchBarText) {
+                    resultArray.append(str)
+                }
+            }
+            searchResultVC.resultArray = resultArray
+            searchResultVC.tableView.reloadData()
+        }else {
+            // 拼音搜索
+            // 若字符个数为1
+            if searchBarText.characters.count == 1 {
+                guard let dic = cityDic[searchBarText.uppercased()] else {
+                    return
+                }
+                resultArray = dic
+                searchResultVC.resultArray = resultArray
+                searchResultVC.tableView.reloadData()
+            }else {
+                guard let dic = cityDic[searchBarText.first().uppercased()] else {
+                    return
+                }
+                for str in dic {
+                    // 去空格
+                    let py = String(str.chineseToPinyin().characters.filter({ $0 != " "}))
+                    let range = py.range(of: searchBarText)
+                    if range != nil {
+                        resultArray.append(str)
+                    }
+                }
+                // 加入首字母判断 如 cq => 重庆 bj => 北京
+                if resultArray.count == 0 {
+                    for str in dic {
+                        // 北京 => bei jing
+                        let pinyin = str.chineseToPinyin()
+                        // 获取空格的index
+                        let a = pinyin.characters.index(of: " ")
+                        let index = pinyin.index(a!, offsetBy: 2)
+                        // offsetBy: 2 截取 bei j
+                        // offsetBy: 1 截取 bei+空格
+                        // substring(to: index) 不包含 index最后那个下标
+                        let py = pinyin.substring(to: index)
+                        /// 获取第二个首字母
+                        ///
+                        ///     py = "bei j"
+                        ///     last = "j"
+                        ///
+                        let last = py.substring(from: py.index(py.endIndex, offsetBy: -1))
+                        /// 两个首字母
+                        let pyIndex = String(pinyin[pinyin.startIndex]) + last
+                        
+                        if searchBarText.lowercased() == pyIndex {
+                            resultArray.append(str)
+                        }
+                    }
+                }
+                searchResultVC.resultArray = resultArray
+                searchResultVC.tableView.reloadData()
+            }
         }
     }
 }

@@ -61,11 +61,15 @@ class HomeViewController: UIViewController {
             NSForegroundColorAttributeName: UIColor.white,
             NSFontAttributeName: UIFont(name: "AdobeClean-Light", size: 18.0)!
             ]}()
+        
+        // 设置代理属性
+        GetWeatherData.shared.delegate = self
+        
         /// 设置返回按钮
         let item = UIBarButtonItem(title: "", style: .plain, target: self, action: nil)
         self.navigationItem.backBarButtonItem = item
         
-        /// 创建右边边item
+        /// 右边item
         let rightBtn = UIButton(type: .custom)
         rightBtn.setTitle("城市", for: .normal)
         rightBtn.sizeToFit()
@@ -81,17 +85,17 @@ class HomeViewController: UIViewController {
         
         self.view.addSubview(self.collectionView)
         
-        /// 注册cell
+        // 注册cell
         collectionView.register(UINib(nibName: "SWCollectionViewCell", bundle: Bundle.main), forCellWithReuseIdentifier: reuseID)
         
-        /// 添加pageControl
+        // 添加pageControl
         view.addSubview(page)
             // 利用SnapKit增加约束
         page.snp.makeConstraints({ make in
             make.top.equalTo(0)
             make.centerX.equalTo(self.view)
             make.width.equalTo(100)
-            make.height.equalTo(30)
+            make.height.equalTo(35)
         })
         
     }
@@ -108,7 +112,7 @@ class HomeViewController: UIViewController {
     
     // MARK: 收到通知后 更新UI
     @objc private func updateUI() {
-        /// 更新数据
+        // 更新数据
         DispatchQueue.main.async {
             // 设置分页控制器的 总数(当只有一页时不显示)
             let count = dataArray?.count ?? 0
@@ -126,10 +130,20 @@ class HomeViewController: UIViewController {
                 return
             }
             self.collectionView.reloadData()
+            let toast = SoolyToast(title: "成功更新数据！", duration: 2.5)
+            toast.show(inView: self.view)
         }
     }
-    
+}
 
+extension HomeViewController: GetWeatherDataDelegate {
+    // MARK: 更新数据失败
+    func getWeatherDataFailure() {
+        DispatchQueue.main.async {
+            let toast = SoolyToast(title: "更新数据失败，请检查网络连接！", duration: 2.5)
+            toast.show(inView: self.view)
+        }
+    }
 }
 
 // MARK: UICollectionView 代理方法、数据源方法

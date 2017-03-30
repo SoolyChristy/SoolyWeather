@@ -14,6 +14,8 @@ class ResultTableViewController: UITableViewController {
 
     var resultArray:[String] = []
     var isFrameChange = false
+    /// 点击cell回调闭包
+    var callBack: () -> () = {}
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,6 +39,13 @@ class ResultTableViewController: UITableViewController {
        let cell =  tableView.dequeueReusableCell(withIdentifier: resultCell, for: indexPath)
         cell.textLabel?.text = resultArray[indexPath.row]
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//        let cell = tableView.cellForRow(at: indexPath)
+        // 请求数据
+//        GetWeatherData.weatherData(cityName: cell?.textLabel?.text ?? "")
+        callBack()
     }
     
     override func viewWillLayoutSubviews() {

@@ -12,7 +12,7 @@ class CitySearchViewController: UISearchController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        print(self.searchBar.frame.width)
     }
 
 }

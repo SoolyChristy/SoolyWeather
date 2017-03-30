@@ -18,6 +18,7 @@
 		7073982D1E6C35B500167C49 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7073982C1E6C35B500167C49 /* HomeViewController.swift */; };
 		707398301E6C381F00167C49 /* SWCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7073982E1E6C381F00167C49 /* SWCollectionViewCell.swift */; };
 		707398311E6C381F00167C49 /* SWCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7073982F1E6C381F00167C49 /* SWCollectionViewCell.xib */; };
+		708193671E8CF7A5006B1984 /* SoolyToast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 708193661E8CF7A5006B1984 /* SoolyToast.swift */; };
 		7090B1F11E72E05200C04D19 /* RecentCitiesableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7090B1F01E72E05200C04D19 /* RecentCitiesableViewCell.swift */; };
 		7090B1F31E72E08B00C04D19 /* CurrentCityTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7090B1F21E72E08B00C04D19 /* CurrentCityTableViewCell.swift */; };
 		709162F11E6E8F89008A913C /* AdobeClean-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 709162F01E6E8F1D008A913C /* AdobeClean-Light.otf */; };
@@ -80,6 +81,7 @@
 		7073982C1E6C35B500167C49 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		7073982E1E6C381F00167C49 /* SWCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SWCollectionViewCell.swift; sourceTree = "<group>"; };
 		7073982F1E6C381F00167C49 /* SWCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SWCollectionViewCell.xib; sourceTree = "<group>"; };
+		708193661E8CF7A5006B1984 /* SoolyToast.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SoolyToast.swift; sourceTree = "<group>"; };
 		7090B1F01E72E05200C04D19 /* RecentCitiesableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecentCitiesableViewCell.swift; sourceTree = "<group>"; };
 		7090B1F21E72E08B00C04D19 /* CurrentCityTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrentCityTableViewCell.swift; sourceTree = "<group>"; };
 		709162F01E6E8F1D008A913C /* AdobeClean-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AdobeClean-Light.otf"; sourceTree = "<group>"; };
@@ -221,6 +223,7 @@
 			children = (
 				EFC0CB881E685345008BFC40 /* WeatherData.swift */,
 				70B0A7F31E7826A1002A4214 /* SoolyCover.swift */,
+				708193661E8CF7A5006B1984 /* SoolyToast.swift */,
 			);
 			name = "Tool(工具)";
 			sourceTree = "<group>";
@@ -566,6 +569,7 @@
 				70F1CDEA1E6EFD1E009216B4 /* UIColor+Hex.swift in Sources */,
 				EF6720341E66FD5D00FF8D71 /* WeatherModel.swift in Sources */,
 				70DC05001E704C6A008A894B /* header.swift in Sources */,
+				708193671E8CF7A5006B1984 /* SoolyToast.swift in Sources */,
 				70B0A7F01E77CF49002A4214 /* String+SoolyWeather.swift in Sources */,
 				707398301E6C381F00167C49 /* SWCollectionViewCell.swift in Sources */,
 				EFC0CB891E685345008BFC40 /* WeatherData.swift in Sources */,

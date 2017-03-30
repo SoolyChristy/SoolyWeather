@@ -18,6 +18,8 @@ class GetWeatherData {
     /// 创建单例
     static let shared = GetWeatherData()
     
+    /// 代理
+    weak var delegate: GetWeatherDataDelegate?
     
     /// 给外界提供 请求'天气数据'方法
     ///
@@ -47,6 +49,10 @@ class GetWeatherData {
         requestSession.dataTask(with: request, completionHandler: {(data,respose,error) in
             if error != nil{
                 print(error.debugDescription)
+                
+                // 请求失败调用代理方法
+                self.delegate?.getWeatherDataFailure()
+                
                 return
             }
             // 利用SwifyJSON 解析JSON
@@ -103,4 +109,8 @@ class GetWeatherData {
         }
         dataArray = dataArr
     }
+}
+
+protocol GetWeatherDataDelegate: NSObjectProtocol {
+    func getWeatherDataFailure()
 }

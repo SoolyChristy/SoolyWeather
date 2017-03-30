@@ -29,7 +29,7 @@ class MenuViewController: UIViewController {
         super.viewDidLoad()
         setupUI()
         
-        /// 接收通知
+        // 接收通知
         NotificationCenter.default.addObserver(self, selector: #selector(updateUI), name: WeatherDataNotificationName, object: nil)
     }
     
