@@ -40,7 +40,7 @@ class MyCitiesTableViewCell: UITableViewCell {
             view.backgroundColor = UIColor.clear
             if view.isKind(of: NSClassFromString("UITableViewCellDeleteConfirmationView")!) {
                 for btn in view.subviews {
-                    if btn.isKind(of: UIButton.self) {
+                    if btn is UIButton {
                         (btn as! UIButton).setBackgroundImage(UIImage(named: "bg"), for: .normal)
                         (btn as! UIButton).backgroundColor = UIColor.clear
                     }

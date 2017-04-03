@@ -42,9 +42,9 @@ class ResultTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        let cell = tableView.cellForRow(at: indexPath)
-        // 请求数据
-//        GetWeatherData.weatherData(cityName: cell?.textLabel?.text ?? "")
+        let cell = tableView.cellForRow(at: indexPath)
+         // 请求数据
+        GetWeatherData.weatherData(cityName: cell?.textLabel?.text ?? "")
         callBack()
     }
     
