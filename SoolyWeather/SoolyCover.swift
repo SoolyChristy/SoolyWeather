@@ -19,7 +19,6 @@ class SoolyCover: UIView {
         case gray
     }
     
-    
     /// 显示蒙版
     ///
     /// - type: 蒙版类型 -（透明、灰色）（默认为透明）
@@ -45,8 +44,17 @@ class SoolyCover: UIView {
     // MARK: 点击蒙版调用
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesBegan(touches, with: event)
-        self.removeFromSuperview()
         callBack()
+    }
+    
+    override func removeFromSuperview() {
+        // 如果存在手势 则移除
+        if let gestureRecognizers = SoolyCover.shared.gestureRecognizers {
+            for gesture in gestureRecognizers {
+                SoolyCover.shared.removeGestureRecognizer(gesture)
+            }
+            super.removeFromSuperview()
+        }
     }
     
 }

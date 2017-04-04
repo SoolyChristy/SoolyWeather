@@ -28,6 +28,11 @@ class DrawerViewController: UIViewController {
         
         view.addSubview(menuViewController.view)
         view.addSubview(rootViewController.view)
+        
+        rootVC?.view.layer.shadowColor = UIColor.black.withAlphaComponent(0.6).cgColor
+        rootVC?.view.layer.shadowOffset = CGSize(width: -2, height: -1)
+        rootVC?.view.layer.shadowOpacity = 0.7
+        rootVC?.view.layer.shadowRadius = 2
 
         
         addChildViewController(menuViewController)
@@ -55,29 +60,27 @@ class DrawerViewController: UIViewController {
     
     // MARK: 展开菜单页
     func showMenu() {
-        let grayView = UIView(frame: (self.rootVC?.view.bounds)!)
-        grayView.backgroundColor = UIColor.clear
-        self.rootVC?.view.addSubview(grayView)
+        
         UIView.animate(withDuration: 0.25, animations: { 
-            self.menuVC?.view.transform = CGAffineTransform.identity
-            self.rootVC?.view.transform = CGAffineTransform(translationX: self.menuWidth, y: 0)
-            grayView.backgroundColor = UIColor.black
-            grayView.alpha = 0.5
+//            self.menuVC?.view.transform = CGAffineTransform.identity
+//            self.rootVC?.view.transform = CGAffineTransform(translationX: self.menuWidth, y: 0)
+            self.rootVC?.view.frame.origin.x = self.menuWidth
+
         }) { (finishi: Bool) in
-            
-            grayView.removeFromSuperview()
+
             // 加入蒙版
-            SoolyCover.show(frame: CGRect(x: self.menuWidth, y: 0, width: ScreenWidth - self.menuWidth, height: ScreenHeight), type: .gray, clickCallBack: {
-                self.hideMenu()
-            })
+            SoolyCover.show(frame: (self.rootVC?.view.frame)!, type: .clear)
+            self.addGesture()
         }
     }
     
     // MARK: 关闭菜单页
     func hideMenu() {
         UIView.animate(withDuration: 0.25, animations: { 
-            self.rootVC?.view.transform = CGAffineTransform(translationX: 0, y: 0)
-            self.menuVC?.view.transform = CGAffineTransform.identity
+//            self.rootVC?.view.transform = CGAffineTransform(translationX: 0, y: 0)
+//            self.menuVC?.view.transform = CGAffineTransform.identity
+            self.rootVC?.view.frame.origin.x = 0
+            self.menuVC?.view.frame.origin.x = 0
         }) { (finish: Bool) in
             // 回弹效果
             let positon = (self.rootVC?.view.layer.position)!
@@ -90,35 +93,72 @@ class DrawerViewController: UIViewController {
             self.rootVC?.view.layer.add(animation, forKey: nil)
         }
     }
-    
+}
+
+extension DrawerViewController {
     // MARK: - 添加屏幕边缘手势
     func addScreenEdgePanGestureRecognizerToView(view: UIView) {
         
-        let pan = UIScreenEdgePanGestureRecognizer(target: self, action: #selector(edgPanGesture(_:)))
+        let pan = UIScreenEdgePanGestureRecognizer(target: self, action: #selector(edgeGes(pan:)))
         pan.edges = UIRectEdge.left
         view.addGestureRecognizer(pan)
-        
     }
     
-    // MARK: - 屏幕左边缘手势
-    @objc private func edgPanGesture(_ pan: UIScreenEdgePanGestureRecognizer) {
-        
+    // MARK: 菜单滑动后添加手势
+    fileprivate func addGesture() {
+        let panGesture = UIPanGestureRecognizer(target: self, action: #selector(setupRootViewFrame(pan:)))
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(tap))
+        SoolyCover.shared.addGestureRecognizer(panGesture)
+        SoolyCover.shared.addGestureRecognizer(tapGesture)
+    }
+    
+    // MARK: 点击手势
+    @objc private func tap() {
+        SoolyCover.hide()
+        hideMenu()
+    }
+    
+    // MARK: 菜单打开时滑动时rootView跟随手指移动
+    @objc private func setupRootViewFrame(pan: UIPanGestureRecognizer) {
         let offsetX = pan.translation(in: pan.view).x
         
-        // view跟着手指移动
-        if pan.state == UIGestureRecognizerState.changed && offsetX <= menuViewWidth {
-            rootVC?.view.transform = CGAffineTransform(translationX: max(offsetX, 0), y: 0)
-            menuVC?.view.transform = CGAffineTransform(translationX: -menuViewWidth + offsetX, y: 0)
-        } else if pan.state == UIGestureRecognizerState.ended || pan.state == UIGestureRecognizerState.cancelled || pan.state == UIGestureRecognizerState.failed {
-            
-            if offsetX > ScreenWidth * 0.5 {
-                showMenu()
-                
-            } else {
-                hideMenu()
+        if pan.state == UIGestureRecognizerState.changed {
+            var originalX = menuWidth
+            if offsetX < 0 {
+                originalX += offsetX
+                rootVC?.view.frame.origin.x = originalX
+            }else {
+                rootVC?.view.frame.origin.x = menuWidth
             }
             
+        }else if pan.state == UIGestureRecognizerState.ended || pan.state == UIGestureRecognizerState.cancelled || pan.state == UIGestureRecognizerState.failed {
+            // 隐藏蒙版
+            SoolyCover.hide()
+            if -offsetX > (ScreenWidth / 2 - ScreenWidth + menuWidth) {
+                hideMenu()
+            }else {
+                showMenu()
+            }
         }
     }
-
+    
+    // MARK: 边缘手势
+    @objc fileprivate func edgeGes(pan: UIScreenEdgePanGestureRecognizer) {
+        var offsetX = pan.translation(in: pan.view).x
+        
+        if offsetX > menuWidth {
+            offsetX = menuWidth
+        }
+        if pan.state == UIGestureRecognizerState.changed {
+            if offsetX > 0 {
+                rootVC?.view.frame.origin.x = offsetX
+            }
+        }else if pan.state == UIGestureRecognizerState.ended || pan.state == UIGestureRecognizerState.cancelled || pan.state == UIGestureRecognizerState.failed {
+            if offsetX > (ScreenWidth / 2) {
+                showMenu()
+            }else {
+                hideMenu()
+            }
+        }
+    }
 }

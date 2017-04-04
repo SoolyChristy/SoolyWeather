@@ -122,7 +122,6 @@ class HomeViewController: UIViewController {
                 self.page.numberOfPages = 0
             } else {
                 // 若没有数据
-                SoolyCover.hide()
                 DrawerViewController.shared?.hideMenu()
                 let vc = CitySelectorViewController()
                 vc.navigationItem.hidesBackButton = true
@@ -156,12 +155,19 @@ extension HomeViewController: UICollectionViewDelegate,UICollectionViewDataSourc
         guard let dataArr = dataArray else {
             return 1
         }
+        if dataArr.count == 0 {
+            return 1
+        }
         return dataArr.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseID, for: indexPath) as!SWCollectionViewCell
         guard let dataArray = dataArray else {
+            cell.weatherData = Weather()
+            return cell
+        }
+        if dataArray.count == 0 {
             cell.weatherData = Weather()
             return cell
         }
