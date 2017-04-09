@@ -21,6 +21,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.rootViewController = DrawerViewController(rootViewController: MainViewController(rootViewController: HomeViewController()), menuViewController: MenuViewController())
         window?.makeKeyAndVisible()
         
+        // 若第一次启动 定位获取城市 并请求数据
+        if dataArray == nil {
+            SWLocation.getCurrentCity(compeletion: { (city) in
+                GetWeatherData.weatherData(cityName: city)
+            })
+        }
         return true
     }
 
@@ -34,9 +40,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
         
         /// 存储数据数组(数据持久化)
-        if dataArray?.count != 0 {
-            NSKeyedArchiver.archiveRootObject(dataArray!, toFile: dataArrPath)
-            print("存储数据成功！- 路径：" + dataArrPath)
+        if let dataArray = dataArray {
+            if dataArray.count != 0 {
+                NSKeyedArchiver.archiveRootObject(dataArray, toFile: dataArrPath)
+                print("存储数据成功！- 路径：" + dataArrPath)
+            }
         }
     }
 

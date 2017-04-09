@@ -4,7 +4,7 @@
 //
 //  Created by SoolyChristina on 2017/3/8.
 //  Copyright © 2017年 SoolyChristina. All rights reserved.
-//
+//  
 
 import Foundation
 import UIKit
@@ -54,3 +54,5 @@ let myCityMargin: CGFloat = 10
 let WeatherDataNotificationName = Notification.Name(rawValue: "GetWeatherDataSuccessfuly")
 /// 删除数据完成通知
 let deleteDataNotificationName = NSNotification.Name(rawValue: "DeleteDataSuccessfuly")
+/// 获取定位城市完成通知
+let locateCityNotificationName = NSNotification.Name("locateCityNotificationName")

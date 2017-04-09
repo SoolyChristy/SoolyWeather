@@ -4,7 +4,7 @@
 //
 //  Created by SoolyChristina on 2017/3/9.
 //  Copyright © 2017年 SoolyChristina. All rights reserved.
-//
+//  热门城市cell
 
 import UIKit
 
@@ -30,7 +30,7 @@ class HotCityTableViewCell: UITableViewCell {
     }
     
     private func setupUI() {
-        
+        self.selectionStyle = .none
         self.backgroundColor = cellColor
         // 动态创建城市btn
         for i in 0..<hotCities.count {

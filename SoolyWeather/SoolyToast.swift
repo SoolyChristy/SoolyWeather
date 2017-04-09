@@ -4,7 +4,7 @@
 //
 //  Created by SoolyChristina on 2017/3/30.
 //  Copyright © 2017年 SoolyChristina. All rights reserved.
-//
+//  Toast提示
 
 import UIKit
 
@@ -41,16 +41,16 @@ class SoolyToast: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func show(inView: UIView) {
+    func show(in view: UIView) {
         // 若存在Toast 则返回
-        for view in inView.subviews {
+        for view in view.subviews {
             if view is SoolyToast {
                 return
             }
         }
-        superView = inView
-        inView.addSubview(self)
-        inView.bringSubview(toFront: self)
+        superView = view
+        view.addSubview(self)
+        view.bringSubview(toFront: self)
         
         UIView.animate(withDuration: 0.5) {
             self.alpha = 0.9

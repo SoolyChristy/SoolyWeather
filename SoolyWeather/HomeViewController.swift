@@ -4,7 +4,7 @@
 //
 //  Created by SoolyChristina on 2017/3/5.
 //  Copyright © 2017年 SoolyChristina. All rights reserved.
-//
+//  主页控制器
 
 import UIKit
 import SnapKit
@@ -130,7 +130,7 @@ class HomeViewController: UIViewController {
             }
             self.collectionView.reloadData()
             let toast = SoolyToast(title: "成功更新数据！", duration: 2.5)
-            toast.show(inView: self.view)
+            toast.show(in: self.view)
         }
     }
 }
@@ -140,7 +140,7 @@ extension HomeViewController: GetWeatherDataDelegate {
     func getWeatherDataFailure() {
         DispatchQueue.main.async {
             let toast = SoolyToast(title: "更新数据失败，请检查网络连接！", duration: 2.5)
-            toast.show(inView: self.view)
+            toast.show(in: self.view)
         }
     }
 }

@@ -33,6 +33,8 @@
 		70E507B31E751A2400A6BCC3 /* SnapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70E507B21E751A2400A6BCC3 /* SnapKit.framework */; };
 		70F1CDEA1E6EFD1E009216B4 /* UIColor+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70F1CDE91E6EFD1E009216B4 /* UIColor+Hex.swift */; };
 		70F1CDED1E6EFDC1009216B4 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70F1CDEC1E6EFDC1009216B4 /* MainViewController.swift */; };
+		70FF48A81E9A0E150009C778 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70FF48A71E9A0E150009C778 /* CoreLocation.framework */; };
+		70FF48AA1E9A120B0009C778 /* SWLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70FF48A91E9A120B0009C778 /* SWLocation.swift */; };
 		8843519F6FEB1E572DAB960C /* Pods_SoolyWeather.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41E1DB84854540886F501FCA /* Pods_SoolyWeather.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		EF6720061E66FCC900FF8D71 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF6720051E66FCC900FF8D71 /* AppDelegate.swift */; };
 		EF67200B1E66FCC900FF8D71 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EF6720091E66FCC900FF8D71 /* Main.storyboard */; };
@@ -96,6 +98,8 @@
 		70E507B21E751A2400A6BCC3 /* SnapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SnapKit.framework; path = "../../Library/Developer/Xcode/DerivedData/SoolyWeather-hicwjgxroopszbgjsmsqbpzcanvm/Build/Products/Debug-iphonesimulator/SnapKit/SnapKit.framework"; sourceTree = "<group>"; };
 		70F1CDE91E6EFD1E009216B4 /* UIColor+Hex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Hex.swift"; sourceTree = "<group>"; };
 		70F1CDEC1E6EFDC1009216B4 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		70FF48A71E9A0E150009C778 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		70FF48A91E9A120B0009C778 /* SWLocation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SWLocation.swift; sourceTree = "<group>"; };
 		EF6720021E66FCC900FF8D71 /* SoolyWeather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SoolyWeather.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF6720051E66FCC900FF8D71 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EF67200A1E66FCC900FF8D71 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -125,6 +129,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				70FF48A81E9A0E150009C778 /* CoreLocation.framework in Frameworks */,
 				70E507B31E751A2400A6BCC3 /* SnapKit.framework in Frameworks */,
 				EFC0CB871E684A8E008BFC40 /* HandyJSON.framework in Frameworks */,
 				8843519F6FEB1E572DAB960C /* Pods_SoolyWeather.framework in Frameworks */,
@@ -221,6 +226,7 @@
 		709162FA1E6E9A2F008A913C /* Tool(工具) */ = {
 			isa = PBXGroup;
 			children = (
+				70FF48A91E9A120B0009C778 /* SWLocation.swift */,
 				EFC0CB881E685345008BFC40 /* WeatherData.swift */,
 				70B0A7F31E7826A1002A4214 /* SoolyCover.swift */,
 				708193661E8CF7A5006B1984 /* SoolyToast.swift */,
@@ -290,6 +296,7 @@
 		84D347E169C7B7F23F6E55F4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				70FF48A71E9A0E150009C778 /* CoreLocation.framework */,
 				70E507B21E751A2400A6BCC3 /* SnapKit.framework */,
 				EFC0CB861E684A8E008BFC40 /* HandyJSON.framework */,
 				41E1DB84854540886F501FCA /* Pods_SoolyWeather.framework */,
@@ -430,7 +437,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0810;
-				LastUpgradeCheck = 0810;
+				LastUpgradeCheck = 0830;
 				ORGANIZATIONNAME = SoolyChristina;
 				TargetAttributes = {
 					EF6720011E66FCC900FF8D71 = {
@@ -576,6 +583,7 @@
 				709162FD1E6E9BC9008A913C /* ForecastCollectionViewCell.swift in Sources */,
 				70F1CDED1E6EFDC1009216B4 /* MainViewController.swift in Sources */,
 				7050D14E1E8512BD00E008AF /* CitySearchViewController.swift in Sources */,
+				70FF48AA1E9A120B0009C778 /* SWLocation.swift in Sources */,
 				7090B1F31E72E08B00C04D19 /* CurrentCityTableViewCell.swift in Sources */,
 				7090B1F11E72E05200C04D19 /* RecentCitiesableViewCell.swift in Sources */,
 				70C17F831E79403B00022897 /* MenuViewController.swift in Sources */,
@@ -657,6 +665,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -707,6 +716,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;

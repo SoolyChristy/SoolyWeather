@@ -4,7 +4,7 @@
 //
 //  Created by SoolyChristina on 17/3/2.
 //  Copyright © 2017年 SoolyChristina. All rights reserved.
-//
+//  请求数据
 
 import Foundation
 import HandyJSON
@@ -48,7 +48,7 @@ class GetWeatherData {
         // 发起网络请求
         requestSession.dataTask(with: request, completionHandler: {(data,respose,error) in
             if error != nil{
-                print(error.debugDescription)
+                print("请求数据失败 - \(error!)")
                 
                 // 请求失败调用代理方法
                 self.delegate?.getWeatherDataFailure()
@@ -57,7 +57,7 @@ class GetWeatherData {
             }
             // 利用SwifyJSON 解析JSON
             let json = JSON.init(data: data!)
-            let dict = json["result"].dictionaryObject as? NSDictionary
+            let dict = json["result"].dictionaryObject as NSDictionary?
             
             // 利用HandyJSON 字典转模型
             let weatherData = Weather.deserialize(from: dict) ?? Weather()

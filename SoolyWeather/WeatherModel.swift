@@ -4,7 +4,7 @@
 //
 //  Created by SoolyChristina on 17/3/1.
 //  Copyright © 2017年 SoolyChristina. All rights reserved.
-//
+//  天气模型
 
 import Foundation
 import HandyJSON

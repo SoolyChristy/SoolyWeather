@@ -88,7 +88,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sga-jj-duE">
-                        <rect key="frame" x="6.5" y="401" width="110" height="30"/>
+                        <rect key="frame" x="7" y="401" width="110" height="30"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="30" id="IJd-tO-WiX"/>
                             <constraint firstAttribute="width" constant="110" id="kdR-Gk-zD3"/>
@@ -100,7 +100,7 @@
                         </state>
                     </button>
                     <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VUG-rX-DmB">
-                        <rect key="frame" x="226.5" y="401" width="110" height="30"/>
+                        <rect key="frame" x="227" y="401" width="110" height="30"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="30" id="6PJ-Lq-hqu"/>
                         </constraints>
@@ -111,7 +111,7 @@
                         </state>
                     </button>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YhK-v4-H94">
-                        <rect key="frame" x="116.5" y="401.5" width="110" height="30"/>
+                        <rect key="frame" x="117" y="401" width="110" height="30"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="30" id="hik-wT-SYP"/>
                         </constraints>
@@ -165,7 +165,7 @@
                 <outlet property="weatherLabel" destination="Htl-cf-9qK" id="V97-QD-EKr"/>
                 <outlet property="windSpeed" destination="sga-jj-duE" id="F3v-4Q-k2K"/>
             </connections>
-            <point key="canvasLocation" x="-348" y="223"/>
+            <point key="canvasLocation" x="-56" y="138"/>
         </collectionViewCell>
     </objects>
     <resources>

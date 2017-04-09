@@ -4,7 +4,7 @@
 //
 //  Created by SoolyChristina on 2017/3/9.
 //  Copyright © 2017年 SoolyChristina. All rights reserved.
-//
+//  城市选择控制器
 
 import UIKit
 
@@ -62,10 +62,28 @@ class CitySelectorViewController: UIViewController {
         array.insert("当前", at: 0)
         return array
     }()
+    /// 定位城市
+    var locateCity: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // 设置UI
         setupUI()
+        
+        // 定位
+        SWLocation.getCurrentCity(compeletion: { (city) in
+            self.locateCity = city
+            // 更新数据
+            let indexPath = IndexPath(row: 0, section: 0)
+            DispatchQueue.main.async {
+                self.tableView.reloadSections(IndexSet(integer: indexPath.section), with: .automatic)
+            }
+        }) {
+            // 失败 弹出toast
+            let toast = SoolyToast(title: "定位失败", duration: 2)
+            toast.show(in: self.view)
+        }
     }
     
     private func setupUI() {
@@ -80,6 +98,7 @@ class CitySelectorViewController: UIViewController {
             ]}()
         tableView.delegate = self
         tableView.dataSource = self
+        tableView.bounces = false
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: nomalCell)
         tableView.register(RecentCitiesTableViewCell.self, forCellReuseIdentifier: recentCell)
         tableView.register(CurrentCityTableViewCell.self, forCellReuseIdentifier: currentCell)
@@ -143,8 +162,11 @@ extension CitySelectorViewController: UITableViewDataSource, UITableViewDelegate
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.section == 0 {
             
-            let cell = tableView.dequeueReusableCell(withIdentifier: currentCell, for: indexPath)
-            cell.backgroundColor = cellColor
+            let cell = tableView.dequeueReusableCell(withIdentifier: currentCell, for: indexPath) as! CurrentCityTableViewCell
+            cell.currentCity = locateCity
+            cell.callBack = { [weak self] in
+                self?.navigationController?.pushViewController(HomeViewController(), animated: true)
+            }
             return cell
             
         }else if indexPath.section == 1 {
@@ -201,7 +223,7 @@ extension CitySelectorViewController: UITableViewDataSource, UITableViewDelegate
         let view = UIView(frame: CGRect(x: 0, y: 0, width: ScreenWidth, height: sectionMargin))
         let title = UILabel(frame: CGRect(x: 15, y: 5, width: ScreenWidth - 15, height: 28))
         var titleArr = titleArray
-        titleArr[0] = "当前城市"
+        titleArr[0] = "当前定位城市"
         titleArr[1] = "最近选择城市"
         titleArr[2] = "热门城市"
         title.text = titleArr[section]

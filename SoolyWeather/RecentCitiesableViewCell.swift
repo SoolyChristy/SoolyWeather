@@ -4,7 +4,7 @@
 //
 //  Created by SoolyChristina on 2017/3/10.
 //  Copyright © 2017年 SoolyChristina. All rights reserved.
-//
+//  最近城市cell
 
 import UIKit
 
@@ -25,6 +25,7 @@ class RecentCitiesTableViewCell: UITableViewCell {
     
     private func setupUI() {
         
+        self.selectionStyle = .none
         self.backgroundColor = cellColor
         
         // 动态创建最近城市btn
