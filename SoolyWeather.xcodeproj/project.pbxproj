@@ -9,6 +9,18 @@
 /* Begin PBXBuildFile section */
 		700083341E810D23008969A9 /* MyCitiesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 700083321E810D23008969A9 /* MyCitiesTableViewCell.swift */; };
 		700083351E810D23008969A9 /* MyCitiesTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 700083331E810D23008969A9 /* MyCitiesTableViewCell.xib */; };
+		70455AF91E9E6B730053F74C /* CHIPageControlAji.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70455AEC1E9E6B730053F74C /* CHIPageControlAji.swift */; };
+		70455AFA1E9E6B730053F74C /* CHIPageControlAleppo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70455AED1E9E6B730053F74C /* CHIPageControlAleppo.swift */; };
+		70455AFB1E9E6B730053F74C /* CHIPageControlChimayo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70455AEE1E9E6B730053F74C /* CHIPageControlChimayo.swift */; };
+		70455AFC1E9E6B730053F74C /* CHIPageControlFresno.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70455AEF1E9E6B730053F74C /* CHIPageControlFresno.swift */; };
+		70455AFD1E9E6B730053F74C /* CHIPageControlJalapeno.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70455AF01E9E6B730053F74C /* CHIPageControlJalapeno.swift */; };
+		70455AFE1E9E6B730053F74C /* CHIPageControlJaloro.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70455AF11E9E6B730053F74C /* CHIPageControlJaloro.swift */; };
+		70455AFF1E9E6B730053F74C /* CHIPageControlPaprika.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70455AF21E9E6B730053F74C /* CHIPageControlPaprika.swift */; };
+		70455B001E9E6B730053F74C /* CHIPageControlPuya.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70455AF31E9E6B730053F74C /* CHIPageControlPuya.swift */; };
+		70455B011E9E6B730053F74C /* CHIBasePageControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70455AF51E9E6B730053F74C /* CHIBasePageControl.swift */; };
+		70455B021E9E6B730053F74C /* CHILayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70455AF61E9E6B730053F74C /* CHILayer.swift */; };
+		70455B031E9E6B730053F74C /* CHIPageControllable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70455AF71E9E6B730053F74C /* CHIPageControllable.swift */; };
+		70455B041E9E6B730053F74C /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 70455AF81E9E6B730053F74C /* Info.plist */; };
 		7050D14E1E8512BD00E008AF /* CitySearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7050D14D1E8512BD00E008AF /* CitySearchViewController.swift */; };
 		7050D1501E8512EA00E008AF /* ResultTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7050D14F1E8512EA00E008AF /* ResultTableViewController.swift */; };
 		7065270D1E71194A00D620FD /* CitySelectorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7065270C1E71194A00D620FD /* CitySelectorViewController.swift */; };
@@ -74,6 +86,19 @@
 		41E1DB84854540886F501FCA /* Pods_SoolyWeather.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SoolyWeather.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		700083321E810D23008969A9 /* MyCitiesTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyCitiesTableViewCell.swift; sourceTree = "<group>"; };
 		700083331E810D23008969A9 /* MyCitiesTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyCitiesTableViewCell.xib; sourceTree = "<group>"; };
+		70455AEB1E9E6B730053F74C /* CHIPageControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHIPageControl.h; sourceTree = "<group>"; };
+		70455AEC1E9E6B730053F74C /* CHIPageControlAji.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CHIPageControlAji.swift; sourceTree = "<group>"; };
+		70455AED1E9E6B730053F74C /* CHIPageControlAleppo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CHIPageControlAleppo.swift; sourceTree = "<group>"; };
+		70455AEE1E9E6B730053F74C /* CHIPageControlChimayo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CHIPageControlChimayo.swift; sourceTree = "<group>"; };
+		70455AEF1E9E6B730053F74C /* CHIPageControlFresno.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CHIPageControlFresno.swift; sourceTree = "<group>"; };
+		70455AF01E9E6B730053F74C /* CHIPageControlJalapeno.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CHIPageControlJalapeno.swift; sourceTree = "<group>"; };
+		70455AF11E9E6B730053F74C /* CHIPageControlJaloro.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CHIPageControlJaloro.swift; sourceTree = "<group>"; };
+		70455AF21E9E6B730053F74C /* CHIPageControlPaprika.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CHIPageControlPaprika.swift; sourceTree = "<group>"; };
+		70455AF31E9E6B730053F74C /* CHIPageControlPuya.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CHIPageControlPuya.swift; sourceTree = "<group>"; };
+		70455AF51E9E6B730053F74C /* CHIBasePageControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CHIBasePageControl.swift; sourceTree = "<group>"; };
+		70455AF61E9E6B730053F74C /* CHILayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CHILayer.swift; sourceTree = "<group>"; };
+		70455AF71E9E6B730053F74C /* CHIPageControllable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CHIPageControllable.swift; sourceTree = "<group>"; };
+		70455AF81E9E6B730053F74C /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7050D14D1E8512BD00E008AF /* CitySearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CitySearchViewController.swift; sourceTree = "<group>"; };
 		7050D14F1E8512EA00E008AF /* ResultTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultTableViewController.swift; sourceTree = "<group>"; };
 		7065270C1E71194A00D620FD /* CitySelectorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CitySelectorViewController.swift; sourceTree = "<group>"; };
@@ -162,6 +187,34 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		70455AEA1E9E6B730053F74C /* CHIPageControl */ = {
+			isa = PBXGroup;
+			children = (
+				70455AEB1E9E6B730053F74C /* CHIPageControl.h */,
+				70455AEC1E9E6B730053F74C /* CHIPageControlAji.swift */,
+				70455AED1E9E6B730053F74C /* CHIPageControlAleppo.swift */,
+				70455AEE1E9E6B730053F74C /* CHIPageControlChimayo.swift */,
+				70455AEF1E9E6B730053F74C /* CHIPageControlFresno.swift */,
+				70455AF01E9E6B730053F74C /* CHIPageControlJalapeno.swift */,
+				70455AF11E9E6B730053F74C /* CHIPageControlJaloro.swift */,
+				70455AF21E9E6B730053F74C /* CHIPageControlPaprika.swift */,
+				70455AF31E9E6B730053F74C /* CHIPageControlPuya.swift */,
+				70455AF41E9E6B730053F74C /* Core */,
+				70455AF81E9E6B730053F74C /* Info.plist */,
+			);
+			path = CHIPageControl;
+			sourceTree = "<group>";
+		};
+		70455AF41E9E6B730053F74C /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				70455AF51E9E6B730053F74C /* CHIBasePageControl.swift */,
+				70455AF61E9E6B730053F74C /* CHILayer.swift */,
+				70455AF71E9E6B730053F74C /* CHIPageControllable.swift */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
 		709162F21E6E9845008A913C /* Home(主页) */ = {
 			isa = PBXGroup;
 			children = (
@@ -202,6 +255,7 @@
 		709162F71E6E98AD008A913C /* 第三方/拓展 */ = {
 			isa = PBXGroup;
 			children = (
+				70455AEA1E9E6B730053F74C /* CHIPageControl */,
 				EF9F4A121E67CCB10095C800 /* SwityJSON */,
 				70F1CDE91E6EFD1E009216B4 /* UIColor+Hex.swift */,
 				70DC04FD1E6FEFF9008A894B /* UIButton+SoolyWeather.swift */,
@@ -490,6 +544,7 @@
 				EF9F4A1B1E67CCB10095C800 /* Info-tvOS.plist in Resources */,
 				EF9F4A191E67CCB10095C800 /* Info-iOS.plist in Resources */,
 				709162FE1E6E9BC9008A913C /* ForecastCollectionViewCell.xib in Resources */,
+				70455B041E9E6B730053F74C /* Info.plist in Resources */,
 				707398311E6C381F00167C49 /* SWCollectionViewCell.xib in Resources */,
 				7065270F1E711FDD00D620FD /* cities.plist in Resources */,
 				EF6720101E66FCC900FF8D71 /* LaunchScreen.storyboard in Resources */,
@@ -570,12 +625,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				7065270D1E71194A00D620FD /* CitySelectorViewController.swift in Sources */,
+				70455AFD1E9E6B730053F74C /* CHIPageControlJalapeno.swift in Sources */,
 				7073982D1E6C35B500167C49 /* HomeViewController.swift in Sources */,
 				70DC04FE1E6FEFF9008A894B /* UIButton+SoolyWeather.swift in Sources */,
+				70455B001E9E6B730053F74C /* CHIPageControlPuya.swift in Sources */,
 				706527111E7133F100D620FD /* HotCityTableViewCell.swift in Sources */,
 				70F1CDEA1E6EFD1E009216B4 /* UIColor+Hex.swift in Sources */,
 				EF6720341E66FD5D00FF8D71 /* WeatherModel.swift in Sources */,
+				70455AFB1E9E6B730053F74C /* CHIPageControlChimayo.swift in Sources */,
 				70DC05001E704C6A008A894B /* header.swift in Sources */,
+				70455AFC1E9E6B730053F74C /* CHIPageControlFresno.swift in Sources */,
+				70455AFE1E9E6B730053F74C /* CHIPageControlJaloro.swift in Sources */,
 				708193671E8CF7A5006B1984 /* SoolyToast.swift in Sources */,
 				70B0A7F01E77CF49002A4214 /* String+SoolyWeather.swift in Sources */,
 				707398301E6C381F00167C49 /* SWCollectionViewCell.swift in Sources */,
@@ -583,13 +643,19 @@
 				709162FD1E6E9BC9008A913C /* ForecastCollectionViewCell.swift in Sources */,
 				70F1CDED1E6EFDC1009216B4 /* MainViewController.swift in Sources */,
 				7050D14E1E8512BD00E008AF /* CitySearchViewController.swift in Sources */,
+				70455AFA1E9E6B730053F74C /* CHIPageControlAleppo.swift in Sources */,
 				70FF48AA1E9A120B0009C778 /* SWLocation.swift in Sources */,
 				7090B1F31E72E08B00C04D19 /* CurrentCityTableViewCell.swift in Sources */,
 				7090B1F11E72E05200C04D19 /* RecentCitiesableViewCell.swift in Sources */,
 				70C17F831E79403B00022897 /* MenuViewController.swift in Sources */,
+				70455AFF1E9E6B730053F74C /* CHIPageControlPaprika.swift in Sources */,
+				70455AF91E9E6B730053F74C /* CHIPageControlAji.swift in Sources */,
 				70B0A7F41E7826A1002A4214 /* SoolyCover.swift in Sources */,
 				700083341E810D23008969A9 /* MyCitiesTableViewCell.swift in Sources */,
+				70455B021E9E6B730053F74C /* CHILayer.swift in Sources */,
 				EF6720061E66FCC900FF8D71 /* AppDelegate.swift in Sources */,
+				70455B011E9E6B730053F74C /* CHIBasePageControl.swift in Sources */,
+				70455B031E9E6B730053F74C /* CHIPageControllable.swift in Sources */,
 				EF9F4A1D1E67CCB10095C800 /* SwiftyJSON.swift in Sources */,
 				7050D1501E8512EA00E008AF /* ResultTableViewController.swift in Sources */,
 				70C17F801E79341F00022897 /* DrawerViewController.swift in Sources */,

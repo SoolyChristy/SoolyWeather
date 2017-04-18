@@ -10,10 +10,15 @@ import UIKit
 
 class MyCitiesTableViewCell: UITableViewCell {
 
+    /// 温度标签
     @IBOutlet weak var tempLabel: UILabel!
+    /// 天气图标
     @IBOutlet weak var weatherIcon: UIImageView!
+    /// 天气标签
     @IBOutlet weak var weatherLabel: UILabel!
+    /// 城市标签
     @IBOutlet weak var cityLabel: UILabel!
+    /// 详细温度标签
     @IBOutlet weak var detailLabel: UILabel!
     /// 数据
     var weatherData: Weather? {

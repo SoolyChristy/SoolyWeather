@@ -13,12 +13,14 @@ private let reuseID = "SWCollectionViewCell"
 
 class HomeViewController: UIViewController {
     
-    lazy var page: UIPageControl = {
-        let page = UIPageControl()
+    lazy var page: CHIPageControlJalapeno = {
+        let page = CHIPageControlJalapeno()
         page.numberOfPages = dataArray?.count ?? 0
-        page.pageIndicatorTintColor = cellColor
-        page.currentPageIndicatorTintColor = mainColor
-        page.currentPage = 0
+        page.tintColor = cellColor
+        page.currentPageTintColor = mainColor
+        page.radius = 4
+        // 初始位置
+        page.progress = 0
         return page
     }()
     
@@ -179,7 +181,8 @@ extension HomeViewController: UICollectionViewDelegate,UICollectionViewDataSourc
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         // 更新page
             let pageNum = (Int(scrollView.contentOffset.x + scrollView.frame.width * 0.5) / Int(ScreenWidth)) % (dataArray?.count)!
-            page.currentPage = pageNum
+//            page.currentPage = pageNum
+        page.set(progress: pageNum, animated: true)
         
         // 当滑动到下一个item时 更新该item的数据
         let width = scrollView.frame.width

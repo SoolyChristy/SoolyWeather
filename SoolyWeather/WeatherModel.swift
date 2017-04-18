@@ -9,6 +9,7 @@
 import Foundation
 import HandyJSON
 
+/// 天气数据模型
 class Weather: NSObject,HandyJSON,NSCoding {
     /// 城市
     var city: String?

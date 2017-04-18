@@ -29,7 +29,7 @@ class SWCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var upadateTime: UILabel!
     /// 湿度btn
     @IBOutlet weak var humidity: UIButton!
-    /// 数据
+    /// 天气数据
     var weatherData: Weather? {
         didSet {
             /// 给子视图赋值
@@ -57,6 +57,7 @@ class SWCollectionViewCell: UICollectionViewCell {
         self.backgroundColor = UIColor.white
         /// 注册 xib
         forecastCollectionView.register(UINib(nibName: "ForecastCollectionViewCell", bundle: Bundle.main), forCellWithReuseIdentifier: reuseID)
+        
         let layout = UICollectionViewFlowLayout()
         layout.minimumLineSpacing = 0
         layout.minimumInteritemSpacing = 0
