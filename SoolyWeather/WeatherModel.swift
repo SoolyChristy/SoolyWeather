@@ -46,42 +46,27 @@ class Weather: NSObject,HandyJSON,NSCoding {
     
     // MARK: 归档
     func encode(with aCoder: NSCoder) {
-        aCoder.encode(city, forKey: "city")
-        aCoder.encode(date, forKey: "date")
-        aCoder.encode(week, forKey: "week")
-        aCoder.encode(weather, forKey: "weather")
-        aCoder.encode(temp, forKey: "temp")
-        aCoder.encode(temphigh, forKey: "temphigh")
-        aCoder.encode(templow, forKey: "templow")
-        aCoder.encode(humidity, forKey: "humidity")
-        aCoder.encode(pressure, forKey: "pressure")
-        aCoder.encode(windspeed, forKey: "windspeed")
-        aCoder.encode(windpower, forKey: "windpower")
-        aCoder.encode(winddirect, forKey: "winddirect")
-        aCoder.encode(updatetime, forKey: "updatetime")
-        aCoder.encode(aqi, forKey: "aqi")
-        aCoder.encode(index, forKey: "index")
-        aCoder.encode(daily, forKey: "daily")
+        // MARK: 利用反射获取类的所有属性
+        let mirror = Mirror(reflecting: self)
+        
+        for (label, value) in mirror.children {
+            aCoder.encode(value, forKey: label ?? "")
+        }
     }
     
     // MARK: 解档
     required init(coder aDecoder:NSCoder) {
-        city = aDecoder.decodeObject(forKey: "city") as? String
-        date = aDecoder.decodeObject(forKey: "date") as? String
-        week = aDecoder.decodeObject(forKey: "week") as? String
-        weather = aDecoder.decodeObject(forKey: "weather") as? String
-        temp = aDecoder.decodeObject(forKey: "temp") as? String
-        temphigh = aDecoder.decodeObject(forKey: "temphigh") as? String
-        templow = aDecoder.decodeObject(forKey: "templow") as? String
-        humidity = aDecoder.decodeObject(forKey: "humidity") as? String
-        pressure = aDecoder.decodeObject(forKey: "pressure") as? String
-        winddirect = aDecoder.decodeObject(forKey: "winddirect") as? String
-        windpower = aDecoder.decodeObject(forKey: "windpower") as? String
-        windspeed = aDecoder.decodeObject(forKey: "windspeed") as? String
-        updatetime = aDecoder.decodeObject(forKey: "updatetime") as? String
-        aqi = aDecoder.decodeObject(forKey: "aqi") as? Aqi
-        index = aDecoder.decodeObject(forKey: "index") as? [Any]
-        daily = aDecoder.decodeObject(forKey: "daily") as? [Forecast]
+        super.init()
+        
+        let mirror = Mirror(reflecting: self)
+        
+        for child in mirror.children {
+            guard let label = child.label,
+                let value = aDecoder.decodeObject(forKey: label) else {
+                return
+            }
+            setValue(value, forKey: label)
+        }
     }
     
     /// 根据天气类型返回天气图标
@@ -96,6 +81,7 @@ class Weather: NSObject,HandyJSON,NSCoding {
         if isBigPic {
             x = "b"
         }
+        
         switch weather {
         case "晴":
             return UIImage(named: "sun_\(x)")!
@@ -131,6 +117,7 @@ class Weather: NSObject,HandyJSON,NSCoding {
     }
     
     func pm2_5Icon(index: String) -> UIImage {
+        
         switch index {
         case "优":
             return UIImage(named: "nice")!
@@ -174,21 +161,24 @@ class Forecast: NSObject,HandyJSON,NSCoding {
     var night: Night?
     
     func encode(with aCoder: NSCoder) {
-        aCoder.encode(date, forKey: "Fdate")
-        aCoder.encode(week, forKey: "Fweek")
-        aCoder.encode(sunrise, forKey: "sunrise")
-        aCoder.encode(sunset, forKey: "sunset")
-        aCoder.encode(day, forKey: "day")
-        aCoder.encode(night, forKey: "night")
+        let mirror = Mirror(reflecting: self)
+        for (label, value) in mirror.children {
+            aCoder.encode(value, forKey: label ?? "")
+        }
     }
     
     required init(coder aDecoder:NSCoder) {
-        date = aDecoder.decodeObject(forKey: "Fdate") as? String
-        week = aDecoder.decodeObject(forKey: "Fweek") as? String
-        sunrise = aDecoder.decodeObject(forKey: "sunrise") as? String
-        sunset = aDecoder.decodeObject(forKey: "sunset") as? String
-        day = aDecoder.decodeObject(forKey: "day") as? Day
-        night = aDecoder.decodeObject(forKey: "night") as? Night
+        super.init()
+        
+        let mirror = Mirror(reflecting: self)
+        
+        for child in mirror.children {
+            guard let label = child.label,
+                let value = aDecoder.decodeObject(forKey: label) else {
+                    return
+            }
+            setValue(value, forKey: label)
+        }
         
     }
     
