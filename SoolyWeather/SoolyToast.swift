@@ -58,7 +58,7 @@ class SoolyToast: UIView {
         
         UIView.animate(withDuration: 0.25, delay: duration, animations: {
             self.frame.origin.y -= 38
-        }) { (finished) in
+        }) { _ in
             self.removeFromSuperview()
         }
     }

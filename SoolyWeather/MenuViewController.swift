@@ -57,6 +57,7 @@ extension MenuViewController {
         // 注册nib
         tableView.register(UINib(nibName: "MyCitiesTableViewCell", bundle: Bundle.main), forCellReuseIdentifier: myCityReuseID)
         tableView.rowHeight = myCitiesCellHeight
+        
         view.addSubview(tableView)
     }
     
