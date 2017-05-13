@@ -9,17 +9,17 @@
 import Foundation
 import HandyJSON
 
-class GetWeatherData {
+class NetworkManager {
     
     private let appCode = "647138002fd44f8abcaefe88afcfb71f"
     private let host = "http://jisutianqi.market.alicloudapi.com"
     private let path = "/weather/query"
     
     /// 创建单例
-    static let shared = GetWeatherData()
+    static let shared = NetworkManager()
     
     /// 代理
-    weak var delegate: GetWeatherDataDelegate?
+    weak var delegate: NetworkManagerDelegate?
     
     /// 给外界提供 请求'天气数据'方法
     ///
@@ -111,6 +111,6 @@ class GetWeatherData {
     }
 }
 
-protocol GetWeatherDataDelegate: NSObjectProtocol {
+protocol NetworkManagerDelegate: NSObjectProtocol {
     func getWeatherDataFailure()
 }

@@ -52,7 +52,7 @@ class CurrentCityTableViewCell: UITableViewCell {
     }
     
     @objc private func btnClick(btn: UIButton) {
-        GetWeatherData.weatherData(cityName: btn.titleLabel?.text ?? "")
+        NetworkManager.weatherData(cityName: btn.titleLabel?.text ?? "")
         callBack!()
     }
 }

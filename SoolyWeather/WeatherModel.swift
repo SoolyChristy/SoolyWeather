@@ -50,7 +50,9 @@ class Weather: NSObject,HandyJSON,NSCoding {
         let mirror = Mirror(reflecting: self)
         
         for (label, value) in mirror.children {
-            aCoder.encode(value, forKey: label ?? "")
+            if let label = label {
+                aCoder.encode(value, forKey: label)
+            }
         }
     }
     

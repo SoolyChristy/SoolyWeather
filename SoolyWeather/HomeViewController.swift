@@ -65,7 +65,7 @@ class HomeViewController: UIViewController {
             ]}()
         
         // 设置代理属性
-        GetWeatherData.shared.delegate = self
+        NetworkManager.shared.delegate = self
         
         /// 设置返回按钮
         let item = UIBarButtonItem(title: "", style: .plain, target: self, action: nil)
@@ -137,7 +137,7 @@ class HomeViewController: UIViewController {
     }
 }
 
-extension HomeViewController: GetWeatherDataDelegate {
+extension HomeViewController: NetworkManagerDelegate {
     // MARK: 更新数据失败
     func getWeatherDataFailure() {
         DispatchQueue.main.async {
@@ -188,11 +188,11 @@ extension HomeViewController: UICollectionViewDelegate,UICollectionViewDataSourc
         let width = scrollView.frame.width
         switch scrollView.contentOffset.x {
         case width:
-            GetWeatherData.weatherData(cityName: (dataArray?[1].city)!, isUpdateData: true)
+            NetworkManager.weatherData(cityName: (dataArray?[1].city)!, isUpdateData: true)
         case width * 2:
-            GetWeatherData.weatherData(cityName: (dataArray?[2].city)!, isUpdateData: true)
+            NetworkManager.weatherData(cityName: (dataArray?[2].city)!, isUpdateData: true)
         case width * 3:
-            GetWeatherData.weatherData(cityName: (dataArray?[3].city)!, isUpdateData: true)
+            NetworkManager.weatherData(cityName: (dataArray?[3].city)!, isUpdateData: true)
         default:
             return
         }

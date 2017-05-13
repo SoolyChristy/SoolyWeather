@@ -24,7 +24,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // 若第一次启动 定位获取城市 并请求数据
         if dataArray == nil {
             SWLocation.getCurrentCity(compeletion: { (city) in
-                GetWeatherData.weatherData(cityName: city)
+                NetworkManager.weatherData(cityName: city)
             })
         }
         return true
@@ -59,7 +59,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         guard let city = dataArray?[0].city else {
             return
         }
-        GetWeatherData.weatherData(cityName: city)
+        NetworkManager.weatherData(cityName: city)
     }
 
     func applicationWillTerminate(_ application: UIApplication) {

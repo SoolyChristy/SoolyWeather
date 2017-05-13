@@ -33,29 +33,6 @@ class MenuViewController: UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(updateUI), name: WeatherDataNotificationName, object: nil)
     }
     
-    private func setupUI() {
-        view.backgroundColor = UIColor.white
-        // 创建头部视图
-        let headView = UIView(frame: CGRect(x: 0, y: 0, width: menuViewWidth, height: menuHeadViewHeight))
-        headView.backgroundColor = mainColor
-        view.addSubview(headView)
-        let headLabel = UILabel()
-        headLabel.text = "SoolyWeather"
-        headLabel.textColor = UIColor.white
-        headLabel.font = UIFont(name: "Adobe Clean", size: 45)
-        headLabel.numberOfLines = 0
-        headView.addSubview(headLabel)
-        headLabel.snp.makeConstraints { (make) in
-            make.left.equalTo(20)
-            make.center.equalToSuperview()
-            make.width.equalTo(menuViewWidth - 40)
-        }
-        // 注册nib
-        tableView.register(UINib(nibName: "MyCitiesTableViewCell", bundle: Bundle.main), forCellReuseIdentifier: myCityReuseID)
-        tableView.rowHeight = myCitiesCellHeight
-        view.addSubview(tableView)
-        
-    }
 
     /// 收到通知 更新UI
     @objc private func updateUI() {
@@ -67,6 +44,39 @@ class MenuViewController: UIViewController {
     // 移除通知
     deinit {
         NotificationCenter.default.removeObserver(self)
+    }
+}
+
+extension MenuViewController {
+    
+    fileprivate func setupUI() {
+        view.backgroundColor = UIColor.white
+        // 创建头部视图
+        setupHeaderView()
+        
+        // 注册nib
+        tableView.register(UINib(nibName: "MyCitiesTableViewCell", bundle: Bundle.main), forCellReuseIdentifier: myCityReuseID)
+        tableView.rowHeight = myCitiesCellHeight
+        view.addSubview(tableView)
+    }
+    
+    private func setupHeaderView() {
+        let headView = UIView(frame: CGRect(x: 0, y: 0, width: menuViewWidth, height: menuHeadViewHeight))
+        headView.backgroundColor = mainColor
+        view.addSubview(headView)
+        
+        let headLabel = UILabel()
+        headLabel.text = "SoolyWeather"
+        headLabel.textColor = UIColor.white
+        headLabel.font = UIFont(name: "Adobe Clean", size: 45)
+        headLabel.numberOfLines = 0
+        headView.addSubview(headLabel)
+        
+        headLabel.snp.makeConstraints { (make) in
+            make.left.equalTo(20)
+            make.center.equalToSuperview()
+            make.width.equalTo(menuViewWidth - 40)
+        }
     }
 }
 

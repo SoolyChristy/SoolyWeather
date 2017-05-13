@@ -176,7 +176,7 @@ extension CitySelectorViewController: UITableViewDataSource, UITableViewDelegate
             // 点击最近城市按钮调用此闭包
             cell.callBack = { [weak self] (btn) in
                 // 请求数据
-                GetWeatherData.weatherData(cityName: btn.titleLabel?.text ?? "")
+                NetworkManager.weatherData(cityName: btn.titleLabel?.text ?? "")
                 self?.navigationController?.pushViewController(HomeViewController(), animated: true)
             }
             return cell
@@ -187,7 +187,7 @@ extension CitySelectorViewController: UITableViewDataSource, UITableViewDelegate
             // 点击热门城市按钮时调用此闭包
             cell.callBack = { [weak self] (btn) in
                 // 请求数据
-                GetWeatherData.weatherData(cityName: btn.titleLabel?.text ?? "")
+                NetworkManager.weatherData(cityName: btn.titleLabel?.text ?? "")
                 self?.navigationController?.pushViewController(HomeViewController(), animated: true)
             }
             return cell
@@ -206,7 +206,7 @@ extension CitySelectorViewController: UITableViewDataSource, UITableViewDelegate
         print("点击了 \(cell?.textLabel?.text ?? "")")
         if indexPath.section > 2 {
             /// 请求数据
-            GetWeatherData.weatherData(cityName: cell?.textLabel?.text ?? "")
+            NetworkManager.weatherData(cityName: cell?.textLabel?.text ?? "")
             self.navigationController?.pushViewController(HomeViewController(), animated: true)
         }else {
             return

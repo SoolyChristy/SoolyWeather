@@ -61,7 +61,7 @@
 		EF9F4A1C1E67CCB10095C800 /* Info-watchOS.plist in Resources */ = {isa = PBXBuildFile; fileRef = EF9F4A161E67CCB10095C800 /* Info-watchOS.plist */; };
 		EF9F4A1D1E67CCB10095C800 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF9F4A181E67CCB10095C800 /* SwiftyJSON.swift */; };
 		EFC0CB871E684A8E008BFC40 /* HandyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EFC0CB861E684A8E008BFC40 /* HandyJSON.framework */; };
-		EFC0CB891E685345008BFC40 /* WeatherData.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFC0CB881E685345008BFC40 /* WeatherData.swift */; };
+		EFC0CB891E685345008BFC40 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFC0CB881E685345008BFC40 /* NetworkManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -145,7 +145,7 @@
 		EF9F4A171E67CCB10095C800 /* SwiftyJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwiftyJSON.h; sourceTree = "<group>"; };
 		EF9F4A181E67CCB10095C800 /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
 		EFC0CB861E684A8E008BFC40 /* HandyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HandyJSON.framework; path = "../Library/Developer/Xcode/DerivedData/SoolyWeather-frajzthtrglocqhckalmcnlbuixx/Build/Products/Debug-iphonesimulator/HandyJSON/HandyJSON.framework"; sourceTree = "<group>"; };
-		EFC0CB881E685345008BFC40 /* WeatherData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherData.swift; sourceTree = "<group>"; };
+		EFC0CB881E685345008BFC40 /* NetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		F09DC736A1F344DFEC4D28A5 /* Pods-SoolyWeather.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SoolyWeather.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SoolyWeather/Pods-SoolyWeather.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -281,7 +281,7 @@
 			isa = PBXGroup;
 			children = (
 				70FF48A91E9A120B0009C778 /* SWLocation.swift */,
-				EFC0CB881E685345008BFC40 /* WeatherData.swift */,
+				EFC0CB881E685345008BFC40 /* NetworkManager.swift */,
 				70B0A7F31E7826A1002A4214 /* SoolyCover.swift */,
 				708193661E8CF7A5006B1984 /* SoolyToast.swift */,
 			);
@@ -639,7 +639,7 @@
 				708193671E8CF7A5006B1984 /* SoolyToast.swift in Sources */,
 				70B0A7F01E77CF49002A4214 /* String+SoolyWeather.swift in Sources */,
 				707398301E6C381F00167C49 /* SWCollectionViewCell.swift in Sources */,
-				EFC0CB891E685345008BFC40 /* WeatherData.swift in Sources */,
+				EFC0CB891E685345008BFC40 /* NetworkManager.swift in Sources */,
 				709162FD1E6E9BC9008A913C /* ForecastCollectionViewCell.swift in Sources */,
 				70F1CDED1E6EFDC1009216B4 /* MainViewController.swift in Sources */,
 				7050D14E1E8512BD00E008AF /* CitySearchViewController.swift in Sources */,
