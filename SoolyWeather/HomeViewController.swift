@@ -180,10 +180,11 @@ extension HomeViewController: UICollectionViewDelegate,UICollectionViewDataSourc
     // MARK: 滑动时更新数据
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         // 更新page
-            let pageNum = (Int(scrollView.contentOffset.x + scrollView.frame.width * 0.5) / Int(ScreenWidth)) % (dataArray?.count)!
-//            page.currentPage = pageNum
+        let offset = scrollView.contentOffset.x + scrollView.frame.width * 0.5
+        let pageNum = Int(offset / scrollView.frame.width)
+
         page.set(progress: pageNum, animated: true)
-        
+      
         // 当滑动到下一个item时 更新该item的数据
         let width = scrollView.frame.width
         switch scrollView.contentOffset.x {
